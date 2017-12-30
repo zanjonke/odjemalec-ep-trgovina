@@ -28,4 +28,8 @@ export class ArtikliComponent implements OnInit {
         this.getArtikli();
     }
 
+    login(): void {
+
+    }
+
 }
