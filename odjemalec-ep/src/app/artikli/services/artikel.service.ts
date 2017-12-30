@@ -3,29 +3,29 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import {Stranka} from '../models/stranka';
+import {Artikel} from '../models/artikel';
 
 @Injectable()
-export class StrankaService {
+export class ArtikelService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost/netbeans/trgovina/api/stranke';
+    private url = 'http://localhost/netbeans/trgovina/api/artikli';
 
     constructor(private http: HttpClient) {
     }
 
-    getStranke(): Promise<Stranka[]> {
+    getArtikli(): Promise<Artikel[]> {
         return this.http.get(this.url)
             .toPromise()
-            .then(response => response as Stranka[])
+            .then(response => response as Artikel[])
             .catch(this.handleError);
     }
 
-    getStranka(id: number): Promise<Stranka> {
+    getArtikel(id: number): Promise<Artikel> {
         const url = `${this.url}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response as Stranka)
+            .then(response => response as Artikel)
             .catch(this.handleError);
     }
 
@@ -37,9 +37,9 @@ export class StrankaService {
             .catch(this.handleError);
     }
 
-    create(stranka: Stranka): Promise<void> {
+    create(artikel: Artikel): Promise<void> {
         return this.http
-            .post(this.url, JSON.stringify(stranka), {headers: this.headers})
+            .post(this.url, JSON.stringify(artikel), {headers: this.headers})
             .toPromise()
             .then()
             .catch(this.handleError);

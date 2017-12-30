@@ -1,0 +1,13 @@
+<h2 xmlns:style="http://www.w3.org/1999/xhtml">Trgovina</h2>
+<h3>Artikli</h3>
+<ul class="uporabniki" style="width: 100px">
+    <li *ngFor="let artikel of artikli" (click)="naPodrobnosti(artikel)">
+        <span>{{artikel.naziv}} {{artikel.cena}}</span>
+    </li>
+</ul>
+<div style="float: right">
+    <p>LOGIN:</p>
+
+
+</div>
+

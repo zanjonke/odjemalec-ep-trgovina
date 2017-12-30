@@ -9,5 +9,5 @@ import {Component} from '@angular/core';
     `
 })
 export class AppComponent {
-    naslov = 'Odjemalec EP: Pregled strank';
+    naslov = 'TRGOVINA EP';
 }
