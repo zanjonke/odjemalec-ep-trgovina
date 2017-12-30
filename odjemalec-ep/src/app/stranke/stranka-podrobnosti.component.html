@@ -1,0 +1,34 @@
+<div *ngIf="stranka">
+
+    <h3>Podrobnosti stranke {{stranka.ime}} {{stranka.priimek}}</h3>
+
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td>{{stranka.idstranka}}</td>
+        </tr>
+        <tr>
+            <td>Ime:</td>
+            <td>{{stranka.ime}}</td>
+        </tr>
+        <tr>
+            <td>Priimek:</td>
+            <td>{{stranka.priimek}}</td>
+        </tr>
+        <tr>
+            <td>Naslov:</td>
+            <td>{{stranka.naslov}}</td>
+        </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td>{{stranka.telefon}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{stranka.email}}</td>
+        </tr>
+    </table>
+
+
+    <button (click)="nazaj()">Nazaj</button>
+</div>

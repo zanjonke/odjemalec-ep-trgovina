@@ -1,0 +1,8 @@
+<h2>Stranke</h2>
+
+<ul class="uporabniki">
+    <li *ngFor="let stranka of stranke" (click)="naPodrobnosti(stranka)">
+        <span>{{stranka.ime}} {{stranka.priimek}}</span>
+    </li>
+</ul>
+
