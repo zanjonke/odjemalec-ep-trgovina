@@ -11,6 +11,9 @@ import {StrankaService} from "./stranke/services/Stranka.service";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
 import {ArtikelService} from "./artikli/services/artikel.service";
 import {ArtikliComponent} from "./artikli/artikli-component";
+import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
+import {LoginComponent} from "./login/login-component";
+import {UporabnikService} from "./login/services/uporabnik.service";
 
 
 @NgModule({
@@ -25,8 +28,10 @@ import {ArtikliComponent} from "./artikli/artikli-component";
         StrankeComponent,
         StrankaPodrobnostiComponent,
         ArtikliComponent,
+        ArtikliPodrobnostiComponent,
+        LoginComponent,
     ],
-    providers: [StrankaService, ArtikelService],
+    providers: [StrankaService, ArtikelService, UporabnikService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

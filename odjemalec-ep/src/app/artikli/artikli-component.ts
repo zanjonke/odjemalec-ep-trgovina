@@ -29,7 +29,11 @@ export class ArtikliComponent implements OnInit {
     }
 
     login(): void {
+        this.router.navigate(['/login']);
+    }
 
+    naPodrobnosti(id: number): void {
+        this.router.navigate(['/artikli', id]);
     }
 
 }

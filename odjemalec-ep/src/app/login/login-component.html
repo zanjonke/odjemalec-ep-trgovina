@@ -1,0 +1,60 @@
+<style>
+    .vertical-menu {
+        width: 200px;
+    }
+
+    .vertical-menu a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .vertical-menu a:hover {
+        background-color: #ccc;
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<h2>Login obrazec</h2>
+<div *ngIf="uporabnik">
+    <form (ngSubmit)="submitForm()" ngNativeValidate>
+        <table>
+            <tr>
+                <td><label for="ime">Ime</label></td>
+                <td><input [(ngModel)]="uporabnik.ime" id="ime" name="ime" required/></td>
+            </tr>
+            <tr>
+                <td><label for="priimek">Priimek</label></td>
+                <td><input [(ngModel)]="uporabnik.priimek" id="priimek" name="priimek" required/></td>
+            </tr>
+            <tr>
+                <td><label for="geslo">Geslo</label></td>
+                <td><input [(ngModel)]="uporabnik.geslo" id="geslo" name="geslo" required
+                           minlength="4"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="vloga">Vloga</label></td>
+                <td><input [(ngModel)]="uporabnik.vloga" id="vloga" name="vloga" required
+                           minlength="4"/>
+                </td>
+                <td >
+                    <div class="vertical-menu">
+                        <a href="#">Admin</a>
+                        <a href="#">Prodajalec</a>
+                        <a href="#">Stranka</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <button type="button" (click)="nazaj()">Nazaj</button>
+        <button type="submit">Login</button>
+    </form>
+</div>
