@@ -9,11 +9,35 @@ import {Uporabnik} from '../models/uporabnik';
 export class UporabnikService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost:8080/v1/uporabniki';
 
     constructor(private http: HttpClient) {
     }
 
-    //TODO!
+    getStranke(): Promise<Uporabnik[]> {
+        return this.http.get('http://localhost:8080/netbeans/trgovina/api/stranke')
+            .toPromise()
+            .then(response => response as Uporabnik[])
+            .catch(this.handleError);
+    }
+
+    getProdajalci(): Promise<Uporabnik[]> {
+        return this.http.get('http://localhost:8080/netbeans/trgovina/api/prodajalci')
+            .toPromise()
+            .then(response => response as Uporabnik[])
+            .catch(this.handleError);
+    }
+
+    getAdmin(): Promise<Uporabnik[]> {
+        return this.http.get('http://localhost:8080/netbeans/trgovina/api/admini')
+            .toPromise()
+            .then(response => response as Uporabnik[])
+            .catch(this.handleError);
+    }
+    
+    private handleError(error: any): Promise<any> {
+        console.error('Prišlo je do napake', error);
+        return Promise.reject(error.message || error);
+    }
+
 }
 

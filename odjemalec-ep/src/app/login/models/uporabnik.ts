@@ -1,6 +1,4 @@
 export class Uporabnik {
-    ime: number;
-    priimek: string;
+    email: string;
     geslo: string;
-    vloga: string;
 }

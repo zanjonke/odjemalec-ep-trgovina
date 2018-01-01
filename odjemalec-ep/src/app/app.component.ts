@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
     moduleId: module.id,
     selector: 'prpo-app',
     template: `
-        <h1>{{naslov}}</h1>
+        <app-header></app-header>
         <router-outlet></router-outlet>
     `
 })
