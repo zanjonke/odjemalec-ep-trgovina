@@ -12,14 +12,14 @@ export class HeaderComponent {
     constructor(private router: Router) {
     }
 
-    ngOnInit(): void{
-        localStorage.setItem('jeStranka', JSON.stringify(false));
-        localStorage.setItem('jeProdajalec', JSON.stringify(false));
-        localStorage.setItem('jeAdmin', JSON.stringify(false));
-    }
-
     goToHome(): void {
-        this.router.navigate(['/artikli']);
+        if (localStorage.getItem("jeAdmin") === "true") {
+            this.router.navigate(['/admin/artikli']);
+        } else if (localStorage.getItem("jeProdajalec") === "true") {
+            this.router.navigate(['/prodajalec/artikli']);
+        } else if (localStorage.getItem("jeStranka") === "true") {
+            this.router.navigate(['/artikli']);
+        }
     }
 
     goToLogin(): void {
@@ -27,7 +27,7 @@ export class HeaderComponent {
     }
 
     goToStranke(): void {
-        this.router.navigate(['/stranke']);
+        this.router.navigate(['/prodajalec/stranke']);
     }
 
     jeAdmin(): boolean {

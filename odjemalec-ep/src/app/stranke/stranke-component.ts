@@ -28,7 +28,7 @@ export class StrankeComponent implements OnInit {
     }
 
     naPodrobnosti(stranka: Stranka): void {
-        this.router.navigate(['/stranke', stranka.idstranka]);
+        this.router.navigate(['/prodajalec/stranke', stranka.idstranka]);
     }
 
 }

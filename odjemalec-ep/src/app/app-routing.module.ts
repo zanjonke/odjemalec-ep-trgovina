@@ -10,11 +10,14 @@ import {LoginComponent} from "./login/login-component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
-    {path: 'stranke', component: StrankeComponent},
-    {path: 'stranke/:id', component: StrankaPodrobnostiComponent},
     {path: 'artikli', component: ArtikliComponent},
     {path: 'artikli/:id', component: ArtikliPodrobnostiComponent},
     {path: 'login', component: LoginComponent},
+    // prodajalec view
+    {path: 'prodajalec/artikli', component: ArtikliComponent},
+    {path: 'prodajalec/artikli/:id', component: ArtikliPodrobnostiComponent},
+    {path: 'prodajalec/stranke', component: StrankeComponent},
+    {path: 'prodajalec/stranke/:id', component: StrankaPodrobnostiComponent},
     ];
 
 @NgModule({

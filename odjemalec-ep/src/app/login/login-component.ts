@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
             if (this.uporabnik.email === uporabnik.email && this.uporabnik.geslo === uporabnik.geslo) {
                 localStorage.setItem('currentUser', JSON.stringify(this.uporabnik));
                 localStorage.setItem('jeProdajalec', JSON.stringify(true));
-                this.router.navigate(['/artikli']);
+                this.router.navigate(['/prodajalec/stranke']);
             }
         }
         for (let uporabnik of this.admini) {
