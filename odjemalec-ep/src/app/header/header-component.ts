@@ -12,6 +12,14 @@ export class HeaderComponent {
     constructor(private router: Router) {
     }
 
+    logout(): void {
+        localStorage.setItem('currentUser', JSON.stringify(''));
+        localStorage.setItem('jeAdmin', JSON.stringify(false));
+        localStorage.setItem('jeProdajalec', JSON.stringify(false));
+        localStorage.setItem('jeStranka', JSON.stringify(false));
+        this.router.navigate(['/artikli']);
+    }
+
     goToHome(): void {
         if (localStorage.getItem("jeAdmin") === "true") {
             this.router.navigate(['/admin/artikli']);
