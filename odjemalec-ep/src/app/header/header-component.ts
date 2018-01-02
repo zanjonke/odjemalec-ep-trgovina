@@ -26,6 +26,10 @@ export class HeaderComponent {
         this.router.navigate(['/login']);
     }
 
+    goToStranke(): void {
+        this.router.navigate(['/stranke']);
+    }
+
     jeAdmin(): boolean {
         if (localStorage.getItem("jeAdmin") === "true") {
             return true;
