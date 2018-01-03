@@ -30,21 +30,21 @@ export class LoginComponent implements OnInit{
     submitForm(): void {
         for (let uporabnik of this.stranke) {
             if (this.uporabnik.email === uporabnik.email && this.uporabnik.geslo === uporabnik.geslo) {
-                localStorage.setItem('currentUser', JSON.stringify(this.uporabnik));
+                localStorage.setItem('currentUser', JSON.stringify(uporabnik));
                 localStorage.setItem('jeStranka', JSON.stringify(true));
                 this.router.navigate(['/artikli']);
             }
         }
         for (let uporabnik of this.prodajalci) {
             if (this.uporabnik.email === uporabnik.email && this.uporabnik.geslo === uporabnik.geslo) {
-                localStorage.setItem('currentUser', JSON.stringify(this.uporabnik));
+                localStorage.setItem('currentUser', JSON.stringify(uporabnik));
                 localStorage.setItem('jeProdajalec', JSON.stringify(true));
                 this.router.navigate(['/prodajalec/stranke']);
             }
         }
         for (let uporabnik of this.admini) {
             if (this.uporabnik.email === uporabnik.email && this.uporabnik.geslo === uporabnik.geslo) {
-                localStorage.setItem('currentUser', JSON.stringify(this.uporabnik));
+                localStorage.setItem('currentUser', JSON.stringify(uporabnik));
                 localStorage.setItem('jeAdmin', JSON.stringify(true));
                 this.router.navigate(['/artikli']);
             }
