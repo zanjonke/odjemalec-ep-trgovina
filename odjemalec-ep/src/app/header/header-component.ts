@@ -29,7 +29,10 @@ export class HeaderComponent {
             this.router.navigate(['/artikli']);
         }
     }
-
+    goToProfile(): void {
+        console.log("goToProfile()");
+        this.router.navigate(['/profil']);
+    }
     goToLogin(): void {
         this.router.navigate(['/login']);
     }

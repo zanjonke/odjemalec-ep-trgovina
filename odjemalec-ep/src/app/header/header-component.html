@@ -2,7 +2,7 @@
     <span>Admin</span>
     <button mat-button>Prodajalci TODO</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary">Profile TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
     <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="jeProdajalec()" color="primary">
@@ -11,7 +11,7 @@
     <button mat-button (click)=goToStranke()>Stranke TODO</button>
     <button mat-button (click)=goToHome()>Naročila TODO</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary">Profile TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
     <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="jeStranka()" color="primary">
@@ -20,12 +20,12 @@
     <button mat-button (click)=goToHome()>Košarica TODO</button>
     <button mat-button (click)=goToHome()>Naročila TODO</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary">Profile TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
     <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="!jeStranka() && !jeProdajalec() && !jeAdmin()" color="primary">
     <span (click)=goToHome()>Trgovina</span>
-    <button mat-button (click)=goToHome()>Artikli TODO</button>
+    <button mat-button (click)="goToHome()">Artikli TODO</button>
     <span class="example-spacer"></span>
     <button mat-raised-button color="primary" (click)=goToLogin()>Login TODO</button>
     <button mat-raised-button color="accent" (click)=goToHome()>Register TODO</button>

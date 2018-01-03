@@ -1,0 +1,40 @@
+<style>
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+</style>
+<mat-card>
+    <mat-card-title>Posodobi profil</mat-card-title>
+    <mat-card-content>
+        <div *ngIf="uporabnik">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input  for="ime" id="ime" name="ime"[(ngModel)]="uporabnik.ime" matInput placeholder="Ime" value={{uporabnik.ime}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  for="priimek" id="priimek" name="priimek"[(ngModel)]="uporabnik.priimek" matInput placeholder="Priimek" value={{uporabnik.priimek}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input for="email" id="email" name="email" [(ngModel)]="uporabnik.email" matInput placeholder="Email" value={{uporabnik.email}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="uporabnik.geslo" matInput placeholder="Geslo" value={{uporabnik.geslo}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width" *ngIf="jeStranka()">
+                    <input for="naslov" id="naslov" name="naslov" [(ngModel)]="uporabnik.naslov" matInput placeholder="Naslov" value={{uporabnik.naslov}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width" *ngIf="jeStranka()">
+                    <input for="telefon" id="telefon" name="telefon" [(ngModel)]="uporabnik.telefon" matInput placeholder="Telefon" value={{uporabnik.telefon}} >
+                </mat-form-field>
+            </form>
+        </div>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>
+    <button mat-raised-button color="primary" (click)="posodobi()">Posodobi</button>
+</mat-card>

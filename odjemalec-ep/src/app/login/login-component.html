@@ -1,42 +1,26 @@
 <style>
-    .vertical-menu {
-        width: 200px;
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
     }
 
-    .vertical-menu a {
-        background-color: #eee;
-        color: black;
-        display: block;
-        padding: 12px;
-        text-decoration: none;
-    }
-
-    .vertical-menu a:hover {
-        background-color: #ccc;
-    }
-
-    .vertical-menu a.active {
-        background-color: #4CAF50;
-        color: white;
+    .example-full-width {
+        width: 100%;
     }
 </style>
-<h2>Login obrazec</h2>
-<div *ngIf="uporabnik">
-    <form (ngSubmit)="submitForm()" ngNativeValidate>
-        <table>
-            <tr>
-                <td><label for="ime">Email</label></td>
-                <td><input [(ngModel)]="uporabnik.email" id="ime" name="ime"/></td>
-            </tr>
-            <tr>
-                <td><label for="geslo">Geslo</label></td>
-                <td><input [(ngModel)]="uporabnik.geslo" id="geslo" name="geslo"/>
-                </td>
-            </tr>
-        </table>
-
-
-        <button type="button" (click)="nazaj()">Nazaj</button>
-        <button type="submit">Login</button>
-    </form>
-</div>
+<mat-card>
+    <mat-card-title>Login obrazec</mat-card-title>
+    <div *ngIf="uporabnik">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input  for="email" id="email" name="email"[(ngModel)]="uporabnik.email" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input  type="password" for="geslo" id="geslo" name="geslo"[(ngModel)]="uporabnik.geslo" matInput placeholder="Geslo">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>
+        <button mat-raised-button color="primary" (click)="submitForm()">Login</button>
+    </div>
+</mat-card>

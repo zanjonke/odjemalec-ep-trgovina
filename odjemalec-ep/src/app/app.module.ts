@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {AppRoutingModule} from './app-routing.module';
 import { MaterialModule } from './material.module';
-
+import {MatInputModule} from '@angular/material/input';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header-component';
 import {StrankeComponent} from "./stranke/stranke-component";
@@ -17,7 +17,9 @@ import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
 import {LoginComponent} from "./login/login-component";
 import {UporabnikService} from "./login/services/uporabnik.service";
-
+import {ProfilComponent} from "./profil/profil-component";
+import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
+import {MatProgressSpinnerModule} from "@angular/material";
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import {UporabnikService} from "./login/services/uporabnik.service";
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,
-        MaterialModule
+        MaterialModule,
+        MatInputModule,
+        MatProgressSpinnerModule
     ],
     declarations: [
         AppComponent,
@@ -35,7 +39,8 @@ import {UporabnikService} from "./login/services/uporabnik.service";
         ArtikliComponent,
         ArtikliPodrobnostiComponent,
         LoginComponent,
-        HeaderComponent
+        HeaderComponent,
+        ProfilComponent, ProfilPosodobiComponent
     ],
     providers: [StrankaService, ArtikelService, UporabnikService],
     bootstrap: [AppComponent]

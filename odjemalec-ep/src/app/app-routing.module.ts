@@ -6,6 +6,8 @@ import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.compone
 import {LoginComponent} from "./login/login-component";
 import {StrankeComponent} from "./stranke/stranke-component";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
+import {ProfilComponent} from "./profil/profil-component";
+import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
     {path: 'prodajalec/artikli/:id', component: ArtikliPodrobnostiComponent},
     {path: 'prodajalec/stranke', component: StrankeComponent},
     {path: 'prodajalec/stranke/:id', component: StrankaPodrobnostiComponent},
+    {path: 'profil', component: ProfilComponent},
+    {path: 'profil/posodobi', component: ProfilPosodobiComponent}
     ];
 
 @NgModule({
