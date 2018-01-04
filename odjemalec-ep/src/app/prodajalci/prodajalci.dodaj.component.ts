@@ -27,7 +27,7 @@ export class ProdajalecDodajComponent implements OnInit {
         this.prodajalec.priimek = '';
         this.prodajalec.email = '';
         this.prodajalec.geslo = '';
-        this.prodajalec.admin_idadmin = 1; // temporary
+        this.prodajalec.aktiviran = "0";
     }
 
     nazaj(): void {
@@ -39,8 +39,7 @@ export class ProdajalecDodajComponent implements OnInit {
         console.log(this.prodajalec.ime);
         console.log(this.prodajalec.priimek);
         console.log(this.prodajalec.email);
-        console.log(this.prodajalec.admin_idadmin);
-        console.log("NEKIIII");
+        console.log(this.prodajalec.aktiviran);
         this.prodajalecService.create(this.prodajalec);
         this.router.navigate(['/admin/prodajalci']);
     }

@@ -98,7 +98,6 @@ export class ProfilPosodobiComponent implements OnInit {
         p.priimek = this.uporabnik.priimek;
         p.geslo = this.uporabnik.geslo;
         p.email = this.uporabnik.email;
-        p.admin_idadmin = 1; // temporary
         return this.http
             .put(url, JSON.stringify(p), {headers: this.headers})
             .toPromise()

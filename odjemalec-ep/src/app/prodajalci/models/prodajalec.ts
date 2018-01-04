@@ -4,5 +4,5 @@ export class Prodajalec {
     priimek: string;
     email: string;
     geslo: string;
-    admin_idadmin: number;
+    aktiviran: string;
 }

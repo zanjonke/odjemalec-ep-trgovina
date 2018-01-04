@@ -23,7 +23,7 @@
                     <td>{{prodajalec.email}}</td>
                 </tr>
             </table>
-            <mat-slide-toggle color="primary" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
+            <mat-slide-toggle color="primary" [checked]="checked" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
         </mat-card>
 
     </mat-card-content>
