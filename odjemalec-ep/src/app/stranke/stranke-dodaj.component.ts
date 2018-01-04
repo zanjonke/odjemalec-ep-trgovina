@@ -47,8 +47,9 @@ export class StrankaDodajComponent implements OnInit {
 
     neki(): void {
         this.print(this.stranka);
-        this.strankaService.create(this.stranka);
-        this.router.navigate(['/prodajalec/stranke']);
+        this.strankaService.create(this.stranka).then(resp => {
+            this.router.navigate(['/prodajalec/stranke']);
+        });
     }
 
 }
