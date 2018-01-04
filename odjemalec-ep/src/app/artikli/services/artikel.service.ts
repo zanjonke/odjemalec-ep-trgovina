@@ -15,7 +15,8 @@ export class ArtikelService {
     }
 
     getArtikli(): Promise<Artikel[]> {
-        return this.http.get(this.url)
+        const url = `${this.url}/aktivirani`
+        return this.http.get(url)
             .toPromise()
             .then(response => response as Artikel[])
             .catch(this.handleError);

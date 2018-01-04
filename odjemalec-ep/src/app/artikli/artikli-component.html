@@ -1,12 +1,21 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <mat-card>
-    <mat-card-title>Artikli</mat-card-title>
-    <mat-card-content>
+    <div class="list">
+        <mat-list>
+            <h2>Artikli</h2>
 
-        <ul class="uporabniki" style="width: 200px">
-            <li *ngFor="let artikel of artikli" (click)="naPodrobnosti(artikel.idartikel)">
-                <span>{{artikel.naziv}} {{artikel.cena}}</span>
-            </li>
-        </ul>
-
-    </mat-card-content>
+            <mat-list-item *ngFor="let artikel of artikli" class="list-item" (click)="naPodrobnosti(artikel.idartikel)">
+                <mat-icon matListIcon>description</mat-icon>
+                <h4 mat-line>{{artikel.naziv}}</h4>
+                <p mat-line> {{artikel.cena}} EUR</p>
+            </mat-list-item>
+        </mat-list>
+    </div>
 </mat-card>
+
+<style>
+    .list-item:hover{
+        cursor: pointer;
+        background-color: darkgray;    
+    }
+</style>

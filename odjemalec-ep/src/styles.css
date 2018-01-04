@@ -6,6 +6,11 @@ h1 {
   font-size: 250%;
 }
 
+.container {
+	padding:0;
+	margin:0 auto;
+}
+
 .selected {
   background-color: #CFD8DC !important;
   color: white;

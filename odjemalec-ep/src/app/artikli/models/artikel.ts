@@ -1,8 +1,7 @@
 export class Artikel {
     idartikel: number;
     naziv: string;
-    slika: string;
+    opis: string;
     cena: number;
-    kolicina: number;
-    prodajalec_idprodajalec: number;
+    aktiviran: number;
 }
