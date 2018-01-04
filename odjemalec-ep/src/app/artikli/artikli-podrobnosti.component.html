@@ -1,24 +1,22 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <mat-card *ngIf="artikel">
-
-    <mat-card-title>Podrobnosti artikla {{artikel.naziv}} za ceno {{artikel.cena}}</mat-card-title>
+    <mat-card-title>Podrobnosti artikla {{artikel.naziv}}</mat-card-title>
     <mat-card-content>
-        <mat-card>
-            <table>
-                <tr >
-                    <td>Id artikla:</td>
-                    <td>{{artikel.idartikel}}</td>
-                </tr>
-                <tr>
-                    <td>Kolicina:</td>
-                    <td>{{artikel.kolicina}}</td>
-                </tr>
-                <tr>
-                    <td>Id prodajalca:</td>
-                    <td>{{artikel.prodajalec_idprodajalec}}</td>
-                </tr>
-            </table>
-        </mat-card>
+        <table>
+            <tr >
+                <td>Artikel:</td>
+                <td>{{artikel.naziv}}</td>
+            </tr>
+            <tr>
+                <td>Opis:</td>
+                <td>{{artikel.opis}}</td>
+            </tr>
+            <tr>
+                <h3>Cena:</h3>
+                <h3>{{artikel.cena}}</h3>
+            </tr>
+        </table>
     </mat-card-content>
 
-    <button (click)="nazaj()">Nazaj</button>
+    <button class="mat-raised-button mat-primary" (click)="nazaj()">Nazaj</button>
 </mat-card>
