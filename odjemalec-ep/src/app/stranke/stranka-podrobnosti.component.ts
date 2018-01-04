@@ -25,7 +25,7 @@ export class StrankaPodrobnostiComponent implements OnInit {
     ngOnInit(): void {
         this.pravice = JSON.parse(localStorage.getItem('pravice')) as boolean;
         this.stranka = JSON.parse(localStorage.getItem('stranka')) as Stranka;
-        if(this.stranka.aktiviran === "0"){
+        if(this.stranka.aktiviran === "0" || this.stranka.aktiviran === null){
           this.stanje = "Aktiviraj";
         } else {
             this.stanje = "Deaktiviraj";
