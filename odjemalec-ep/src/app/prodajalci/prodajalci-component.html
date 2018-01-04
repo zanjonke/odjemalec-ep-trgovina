@@ -1,33 +1,30 @@
 <mat-card>
     <mat-card-title>Prodajalci</mat-card-title>
     <mat-card-content *ngIf="!razvrsceno">
-        <mat-card style="width: 200px">
-            <mat-card-title>Vsi prodajalci</mat-card-title>
-            <ul class="uporabniki" style="width: 200px">
-                <li *ngFor="let prodajalec of prodajalci" (click)="naPodrobnosti(prodajalec)">
+            <mat-list style="width: 200px">
+                <button style="width: 150px" mat-raised-button *ngFor="let prodajalec of prodajalci" (click)="naPodrobnosti(prodajalec)">
                     <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
-                </li>
-            </ul>
-        </mat-card>
+                </button>
+            </mat-list>
     </mat-card-content>
     <mat-grid-list *ngIf="razvrsceno" cols="2" >
-        <mat-grid-tile>
-            <mat-card>
+        <mat-grid-tile >
+            <mat-card style="background-color: LightBlue">
                 <mat-card-title>Aktivirani prodajalci</mat-card-title>
-                <ul class="uporabniki" style="width: 200px">
-                    <li *ngFor="let prodajalec of Aprodajalci" (click)="naPodrobnosti(prodajalec)">
+                <ul>
+                    <button style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Aprodajalci" (click)="naPodrobnosti(prodajalec)">
                         <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
-                    </li>
+                    </button>
                 </ul>
             </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-card>
+        <mat-grid-tile  >
+            <mat-card style="background-color: LightGray">
                 <mat-card-title>Neaktivirani prodajalci</mat-card-title>
-                <ul class="uporabniki" style="width: 200px">
-                    <li *ngFor="let prodajalec of Nprodajalci" (click)="naPodrobnosti(prodajalec)">
+                <ul>
+                    <button  style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Nprodajalci" (click)="naPodrobnosti(prodajalec)">
                         <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
-                    </li>
+                    </button>
                 </ul>
             </mat-card>
         </mat-grid-tile>
