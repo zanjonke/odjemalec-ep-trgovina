@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>Prodajalci</mat-card-title>
+    <mat-card-content>
+        <ul class="uporabniki" style="width: 200px">
+            <li *ngFor="let prodajalec of prodajalci" (click)="naPodrobnosti(prodajalec)">
+                <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
+            </li>
+        </ul>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="dodaj()">Dodaj</button>
+</mat-card>

@@ -2,20 +2,22 @@
 
     <mat-card-title>Podrobnosti artikla {{artikel.naziv}} za ceno {{artikel.cena}}</mat-card-title>
     <mat-card-content>
-        <table>
-            <tr >
-                <td>Id artikla:</td>
-                <td>{{artikel.idartikel}}</td>
-            </tr>
-            <tr>
-                <td>Kolicina:</td>
-                <td>{{artikel.kolicina}}</td>
-            </tr>
-            <tr>
-                <td>Id prodajalca:</td>
-                <td>{{artikel.prodajalec_idprodajalec}}</td>
-            </tr>
-        </table>
+        <mat-card>
+            <table>
+                <tr >
+                    <td>Id artikla:</td>
+                    <td>{{artikel.idartikel}}</td>
+                </tr>
+                <tr>
+                    <td>Kolicina:</td>
+                    <td>{{artikel.kolicina}}</td>
+                </tr>
+                <tr>
+                    <td>Id prodajalca:</td>
+                    <td>{{artikel.prodajalec_idprodajalec}}</td>
+                </tr>
+            </table>
+        </mat-card>
     </mat-card-content>
 
     <button (click)="nazaj()">Nazaj</button>

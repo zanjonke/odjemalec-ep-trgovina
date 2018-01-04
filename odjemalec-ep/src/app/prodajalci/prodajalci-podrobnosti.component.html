@@ -1,0 +1,33 @@
+<mat-card *ngIf="prodajalec">
+
+    <mat-card-title>
+        Podrobnosti prodajalca {{prodajalec.ime}} {{prodajalec.priimek}}
+    </mat-card-title>
+    <mat-card-content>
+        <mat-card>
+            <table>
+                <tr>
+                    <td>Id:</td>
+                    <td>{{prodajalec.idprodajalec}}</td>
+                </tr>
+                <tr>
+                    <td>Ime:</td>
+                    <td>{{prodajalec.ime}}</td>
+                </tr>
+                <tr>
+                    <td>Priimek:</td>
+                    <td>{{prodajalec.priimek}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{prodajalec.email}}</td>
+                </tr>
+            </table>
+            <mat-slide-toggle color="primary" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
+        </mat-card>
+
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>
+    <button mat-raised-button color="primary" (click)="posodobi()">Posodobi</button>
+    <button mat-raised-button color="primary" (click)="zbrisi()">Zbrisi</button>
+</mat-card>

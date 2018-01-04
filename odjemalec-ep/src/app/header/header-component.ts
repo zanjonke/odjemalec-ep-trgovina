@@ -13,16 +13,16 @@ export class HeaderComponent {
     }
 
     logout(): void {
-        localStorage.setItem('currentUser', JSON.stringify(''));
-        localStorage.setItem('jeAdmin', JSON.stringify(false));
-        localStorage.setItem('jeProdajalec', JSON.stringify(false));
-        localStorage.setItem('jeStranka', JSON.stringify(false));
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('jeAdmin');
+        localStorage.removeItem('jeProdajalec');
+        localStorage.removeItem('jeStranka');
         this.router.navigate(['/artikli']);
     }
 
     goToHome(): void {
         if (localStorage.getItem("jeAdmin") === "true") {
-            this.router.navigate(['/admin/artikli']);
+            this.router.navigate(['/admin/prodajalci']);
         } else if (localStorage.getItem("jeProdajalec") === "true") {
             this.router.navigate(['/prodajalec/artikli']);
         } else if (localStorage.getItem("jeStranka") === "true") {
@@ -35,6 +35,9 @@ export class HeaderComponent {
     }
     goToLogin(): void {
         this.router.navigate(['/login']);
+    }
+    goToProdajalci(): void {
+        this.router.navigate(['/admin/prodajalci']);
     }
 
     goToStranke(): void {

@@ -1,10 +1,12 @@
 <mat-card>
     <mat-card-title>Artikli</mat-card-title>
     <mat-card-content>
+
         <ul class="uporabniki" style="width: 200px">
             <li *ngFor="let artikel of artikli" (click)="naPodrobnosti(artikel.idartikel)">
                 <span>{{artikel.naziv}} {{artikel.cena}}</span>
             </li>
         </ul>
+
     </mat-card-content>
 </mat-card>

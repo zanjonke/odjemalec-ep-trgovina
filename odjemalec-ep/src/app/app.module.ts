@@ -20,6 +20,11 @@ import {UporabnikService} from "./login/services/uporabnik.service";
 import {ProfilComponent} from "./profil/profil-component";
 import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
 import {MatProgressSpinnerModule} from "@angular/material";
+import {ProdajalciComponent} from "./prodajalci/prodajalci-component";
+import {ProdajalecService} from "./prodajalci/services/prodajalec.service";
+import {ProdajalecPodrobnostiComponent} from "./prodajalci/prodajalci-podrobnosti.component";
+import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.component";
+import {ProdajalecDodajComponent} from "./prodajalci/prodajalci.dodaj.component";
 
 @NgModule({
     imports: [
@@ -40,9 +45,10 @@ import {MatProgressSpinnerModule} from "@angular/material";
         ArtikliPodrobnostiComponent,
         LoginComponent,
         HeaderComponent,
-        ProfilComponent, ProfilPosodobiComponent
+        ProfilComponent, ProfilPosodobiComponent,
+        ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
     ],
-    providers: [StrankaService, ArtikelService, UporabnikService],
+    providers: [StrankaService, ArtikelService, UporabnikService, ProdajalecService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

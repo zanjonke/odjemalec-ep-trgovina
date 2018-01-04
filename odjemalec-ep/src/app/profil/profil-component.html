@@ -3,36 +3,38 @@
         Profil
     </mat-card-title>
     <mat-card-content>
-        <table>
-            <tr>
-                <td>Ime:</td>
-                <td>{{uporabnik.ime}}</td>
-            </tr>
-            <tr>
-                <td>Priimek:</td>
-                <td>{{uporabnik.priimek}}</td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>{{uporabnik.email}}</td>
-            </tr>
-            <tr>
-                <td>Geslo:</td>
-                <td>{{uporabnik.geslo}}</td>
-            </tr>
-            <tr>
-                <td>Vloga:</td>
-                <td>{{vloga}}</td>
-            </tr>
-            <tr *ngIf="jeStranka()">
-                <td>Telefon:</td>
-                <td>{{uporabnik.telefon}}</td>
-            </tr>
-            <tr *ngIf="jeStranka()">
-                <td>Naslov:</td>
-                <td>{{uporabnik.naslov}}</td>
-            </tr>
-        </table>
+        <mat-card>
+            <table>
+                <tr>
+                    <td>Ime:</td>
+                    <td>{{uporabnik.ime}}</td>
+                </tr>
+                <tr>
+                    <td>Priimek:</td>
+                    <td>{{uporabnik.priimek}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{uporabnik.email}}</td>
+                </tr>
+                <tr>
+                    <td>Geslo:</td>
+                    <td>{{uporabnik.geslo}}</td>
+                </tr>
+                <tr>
+                    <td>Vloga:</td>
+                    <td>{{vloga}}</td>
+                </tr>
+                <tr *ngIf="jeStranka()">
+                    <td>Telefon:</td>
+                    <td>{{uporabnik.telefon}}</td>
+                </tr>
+                <tr *ngIf="jeStranka()">
+                    <td>Naslov:</td>
+                    <td>{{uporabnik.naslov}}</td>
+                </tr>
+            </table>
+        </mat-card>
     </mat-card-content>
     <button mat-raised-button color="primary" (click)=nazaj()>Nazaj</button>
     <button mat-raised-button color="primary" (click)=posodobi()>Posodobi</button>

@@ -1,0 +1,34 @@
+<style>
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+</style>
+<mat-card>
+    <mat-card-title>Posodobi prodajalca</mat-card-title>
+    <mat-card-content>
+        <div *ngIf="prodajalec">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input  for="ime" id="ime" name="ime"[(ngModel)]="prodajalec.ime" matInput placeholder="Ime" value={{prodajalec.ime}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  for="priimek" id="priimek" name="priimek"[(ngModel)]="prodajalec.priimek" matInput placeholder="Priimek" value={{prodajalec.priimek}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input for="email" id="email" name="email" [(ngModel)]="prodajalec.email" matInput placeholder="Email" value={{prodajalec.email}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="prodajalec.geslo" matInput placeholder="Geslo" value={{prodajalec.geslo}} >
+                </mat-form-field>
+            </form>
+        </div>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>
+    <button mat-raised-button color="primary" (click)="posodobi()">Posodobi</button>
+</mat-card>

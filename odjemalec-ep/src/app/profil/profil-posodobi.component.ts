@@ -5,8 +5,9 @@ import {Location} from '@angular/common';
 import {Uporabnik} from "../login/models/uporabnik";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Stranka} from "../stranke/models/stranka";
-import {Prodajalec} from "./models/prodajalec";
+
 import {Admin} from "./models/admin";
+import {Prodajalec} from "../prodajalci/models/prodajalec";
 
 
 
@@ -91,12 +92,13 @@ export class ProfilPosodobiComponent implements OnInit {
     }
 
     updateProdajalec(): Promise<void> {
-        const url = `http://localhost:8080/netbeans/trgovina/api/prodajalci/` + this.uporabnik.idstranka;
+        const url = `http://localhost:8080/netbeans/trgovina/api/prodajalci/` + this.uporabnik.idprodajalec;
         let p = new Prodajalec();
         p.ime = this.uporabnik.ime;
         p.priimek = this.uporabnik.priimek;
         p.geslo = this.uporabnik.geslo;
         p.email = this.uporabnik.email;
+        p.admin_idadmin = 1; // temporary
         return this.http
             .put(url, JSON.stringify(p), {headers: this.headers})
             .toPromise()
@@ -104,7 +106,7 @@ export class ProfilPosodobiComponent implements OnInit {
 
     }
     updateAdmin(): Promise<void> {
-        const url = `http://localhost:8080/netbeans/trgovina/api/admini/` + this.uporabnik.idstranka;
+        const url = `http://localhost:8080/netbeans/trgovina/api/admini/` + this.uporabnik.idadmin;
         let a = new Admin();
         a.ime = this.uporabnik.ime;
         a.priimek = this.uporabnik.priimek;

@@ -1,6 +1,6 @@
 <mat-toolbar *ngIf="jeAdmin()" color="primary">
     <span>Admin</span>
-    <button mat-button>Prodajalci TODO</button>
+    <button mat-button (click)="goToProdajalci()">Prodajalci TODO</button>
     <span class="example-spacer"></span>
     <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
     <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>

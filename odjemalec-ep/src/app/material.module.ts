@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatToolbarModule, MatCardModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
-  imports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule, MatProgressSpinnerModule],
-  exports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule, MatProgressSpinnerModule],
+  imports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule,MatSlideToggleModule],
+  exports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule,MatSlideToggleModule],
 })
 export class MaterialModule { }
