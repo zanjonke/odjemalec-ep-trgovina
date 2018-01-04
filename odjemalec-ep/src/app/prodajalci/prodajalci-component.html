@@ -9,23 +9,23 @@
     </mat-card-content>
     <mat-grid-list *ngIf="razvrsceno" cols="2" >
         <mat-grid-tile >
-            <mat-card style="background-color: LightBlue">
+            <mat-card style="background-color: LightBlue; float: top">
                 <mat-card-title>Aktivirani prodajalci</mat-card-title>
-                <ul>
-                    <button style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Aprodajalci" (click)="naPodrobnosti(prodajalec)">
-                        <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
-                    </button>
-                </ul>
+                    <mat-list>
+                        <button style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Aprodajalci" (click)="naPodrobnosti(prodajalec)">
+                            <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
+                        </button>
+                    </mat-list>
             </mat-card>
         </mat-grid-tile>
         <mat-grid-tile  >
-            <mat-card style="background-color: LightGray">
+            <mat-card style="background-color: LightGray; float: top">
                 <mat-card-title>Neaktivirani prodajalci</mat-card-title>
-                <ul>
-                    <button  style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Nprodajalci" (click)="naPodrobnosti(prodajalec)">
-                        <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
-                    </button>
-                </ul>
+                    <mat-list>
+                        <button  style="width: 200px;float: left" mat-raised-button *ngFor="let prodajalec of Nprodajalci" (click)="naPodrobnosti(prodajalec)">
+                            <span>{{prodajalec.ime}} {{prodajalec.priimek}}</span>
+                        </button>
+                    </mat-list>
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>

@@ -1,6 +1,9 @@
 import { Component,Renderer } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {Router} from '@angular/router';
+import {Uporabnik} from "../login/models/uporabnik";
+import {ProdajalecService} from "../prodajalci/services/prodajalec.service";
+import {Prodajalec} from "../prodajalci/models/prodajalec";
 
 @Component({
     moduleId: module.id,
@@ -8,15 +11,14 @@ import {Router} from '@angular/router';
     templateUrl: 'header-component.html'
 })
 
-export class HeaderComponent { 
-    constructor(private router: Router) {
+export class HeaderComponent {
+    p: Prodajalec;
+    constructor(private router: Router,
+                private prodajalecService: ProdajalecService) {
     }
 
     logout(): void {
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('jeAdmin');
-        localStorage.removeItem('jeProdajalec');
-        localStorage.removeItem('jeStranka');
+        localStorage.clear();
         this.router.navigate(['/artikli']);
     }
 

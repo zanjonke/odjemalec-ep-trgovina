@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {Uporabnik} from './models/uporabnik';
 import {UporabnikService} from './services/uporabnik.service';
+import {ProdajalecService} from "../prodajalci/services/prodajalec.service";
+import {Prodajalec} from "../prodajalci/models/prodajalec";
 
 @Component({
     moduleId: module.id,
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit{
 
     constructor(private uporabnikService: UporabnikService,
                 private router: Router,
-                private location: Location) {
+                private location: Location,
+                private prodajalecService: ProdajalecService) {
     }
 
     ngOnInit(): void{
@@ -39,7 +42,17 @@ export class LoginComponent implements OnInit{
             if (this.uporabnik.email === uporabnik.email && this.uporabnik.geslo === uporabnik.geslo) {
                 localStorage.setItem('currentUser', JSON.stringify(uporabnik));
                 localStorage.setItem('jeProdajalec', JSON.stringify(true));
-                this.router.navigate(['/prodajalec/stranke']);
+                let u = JSON.parse(localStorage.getItem('currentUser')) as Uporabnik;
+                let p = new Prodajalec();
+                this.prodajalecService.getProdajalec(u.idprodajalec).then(prodajalec => {
+                    p = prodajalec;
+                    if(p.aktiviran === "0"){
+                        localStorage.setItem('pravice',JSON.stringify(false));
+                    } else {
+                        localStorage.setItem('pravice',JSON.stringify(true));
+                    }
+                    this.router.navigate(['/prodajalec/stranke']);
+                }, reason => {console.log("Prišlo je do napake!")});
             }
         }
         for (let uporabnik of this.admini) {

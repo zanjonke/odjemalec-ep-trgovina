@@ -25,6 +25,8 @@ import {ProdajalecService} from "./prodajalci/services/prodajalec.service";
 import {ProdajalecPodrobnostiComponent} from "./prodajalci/prodajalci-podrobnosti.component";
 import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.component";
 import {ProdajalecDodajComponent} from "./prodajalci/prodajalci.dodaj.component";
+import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
+import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 
 @NgModule({
     imports: [
@@ -39,8 +41,7 @@ import {ProdajalecDodajComponent} from "./prodajalci/prodajalci.dodaj.component"
     ],
     declarations: [
         AppComponent,
-        StrankeComponent,
-        StrankaPodrobnostiComponent,
+        StrankeComponent, StrankaPodrobnostiComponent,StrankaPosodobiComponent,StrankaDodajComponent,
         ArtikliComponent,
         ArtikliPodrobnostiComponent,
         LoginComponent,

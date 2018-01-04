@@ -51,7 +51,6 @@ export class ProdajalecPodrobnostiComponent implements OnInit {
     }
 
     zbrisi(): void {
-        console.log("v zbrisi()");
         this.prodajalecService.delete(this.prodajalec.idprodajalec);
         localStorage.removeItem('prodajalec');
         this.router.navigate(['/admin/prodajalci']);

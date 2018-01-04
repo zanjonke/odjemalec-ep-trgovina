@@ -1,0 +1,40 @@
+<style>
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+</style>
+<mat-card>
+    <mat-card-title>Dodaj stranko</mat-card-title>
+    <mat-card-content>
+        <div *ngIf="stranka">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input  for="ime" id="ime" name="ime"[(ngModel)]="stranka.ime" matInput placeholder="Ime" value={{stranka.ime}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  for="priimek" id="priimek" name="priimek"[(ngModel)]="stranka.priimek" matInput placeholder="Priimek" value={{stranka.priimek}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input for="email" id="email" name="email" [(ngModel)]="stranka.email" matInput placeholder="Email" value={{stranka.email}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="stranka.geslo" matInput placeholder="Geslo" value={{stranka.geslo}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  for="naslov" id="naslov" name="naslov" [(ngModel)]="stranka.naslov" matInput placeholder="naslov" value={{stranka.naslov}} >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  for="telefon" id="telefon" name="telefon" [(ngModel)]="stranka.telefon" matInput placeholder="telefon" value={{stranka.telefon}} >
+                </mat-form-field>
+            </form>
+        </div>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>
+    <button *ngIf="pravice" mat-raised-button color="primary" (click)="neki()">Dodaj</button>
+</mat-card>

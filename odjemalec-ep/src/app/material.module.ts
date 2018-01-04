@@ -4,12 +4,12 @@ import { MatButtonModule, MatToolbarModule, MatCardModule, MatListModule, MatIco
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatListModule} from '@angular/material/list';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   imports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule,MatSlideToggleModule,
-    MatGridListModule,MatListModule, MatIconModule],
+    MatGridListModule,MatListModule, MatIconModule,MatTooltipModule],
   exports: [MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule,MatSlideToggleModule,
-    MatGridListModule,MatListModule, MatIconModule],
+    MatGridListModule,MatListModule, MatIconModule,MatTooltipModule],
 })
 export class MaterialModule { }

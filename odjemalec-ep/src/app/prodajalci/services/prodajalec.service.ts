@@ -32,7 +32,7 @@ export class ProdajalecService {
     delete(id: number): Promise<void> {
         const url = `${this.url}/${id}`;
         console.log(this.headers);
-        return this.http.delete(url)
+        return this.http.delete(url, {headers: this.headers})
             .toPromise()
             .then(() => null, () => null)
             .catch(this.handleError);

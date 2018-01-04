@@ -24,7 +24,6 @@ export class ProdajalciComponent implements OnInit {
             .then(prodajalci => {this.prodajalci = prodajalci;
                 if(this.razvrsceno){this.razvrsti()}
                 });
-        localStorage.setItem('prodajalci', JSON.stringify(this.prodajalci));
     }
 
     ngOnInit(): void {

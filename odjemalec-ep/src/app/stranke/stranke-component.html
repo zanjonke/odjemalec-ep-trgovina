@@ -1,10 +1,35 @@
 <mat-card>
     <mat-card-title>Stranke</mat-card-title>
-    <mat-card-content>
-        <ul class="uporabniki">
-            <li *ngFor="let stranka of stranke" (click)="naPodrobnosti(stranka)">
+    <mat-card-content *ngIf="!razvrsceno">
+        <mat-list style="width: 200px">
+            <button style="width: 150px" mat-raised-button *ngFor="let stranka of stranke" (click)="naPodrobnosti(stranka)">
                 <span>{{stranka.ime}} {{stranka.priimek}}</span>
-            </li>
-        </ul>
+            </button>
+        </mat-list>
     </mat-card-content>
+    <mat-grid-list *ngIf="razvrsceno" cols="2" >
+        <mat-grid-tile >
+            <mat-card style="background-color: LightBlue; float: top">
+                <mat-card-title>Aktivirane stranke</mat-card-title>
+                <mat-list>
+                    <button style="width: 200px;float: left" mat-raised-button *ngFor="let stranka of Astranke" (click)="naPodrobnosti(stranka)">
+                        <span>{{stranka.ime}} {{stranka.priimek}}</span>
+                    </button>
+                </mat-list>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile  >
+            <mat-card style="background-color: LightGray; float: top">
+                <mat-card-title>Neaktivirane stranke</mat-card-title>
+                <mat-list>
+                    <button  style="width: 200px;float: left" mat-raised-button *ngFor="let stranka of Nstranke" (click)="naPodrobnosti(stranka)">
+                        <span>{{stranka.ime}} {{stranka.priimek}}</span>
+                    </button>
+                </mat-list>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <button *ngIf="pravice" mat-raised-button color="primary" (click)="dodaj()">Dodaj</button>
+    <button *ngIf="!razvrsceno" mat-raised-button color="primary" (click)="razvrsti()">Razvrsti</button>
+    <button *ngIf="razvrsceno" mat-raised-button color="primary" (click)="vseStranke()">Vse stranke</button>
 </mat-card>

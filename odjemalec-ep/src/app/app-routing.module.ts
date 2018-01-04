@@ -12,6 +12,8 @@ import {ProdajalciComponent} from "./prodajalci/prodajalci-component";
 import {ProdajalecPodrobnostiComponent} from "./prodajalci/prodajalci-podrobnosti.component";
 import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.component";
 import {ProdajalecDodajComponent} from "./prodajalci/prodajalci.dodaj.component";
+import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
+import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
@@ -22,7 +24,9 @@ const routes: Routes = [
     {path: 'prodajalec/artikli', component: ArtikliComponent},
     {path: 'prodajalec/artikli/:id', component: ArtikliPodrobnostiComponent},
     {path: 'prodajalec/stranke', component: StrankeComponent},
-    {path: 'prodajalec/stranke/:id', component: StrankaPodrobnostiComponent},
+    {path: 'prodajalec/stranke/podrobnosti', component: StrankaPodrobnostiComponent},
+    {path: 'prodajalec/stranke/posodobi', component: StrankaPosodobiComponent},
+    {path: 'prodajalec/stranke/dodaj', component: StrankaDodajComponent},
     {path: 'profil', component: ProfilComponent},
     {path: 'profil/posodobi', component: ProfilPosodobiComponent},
     //admin view

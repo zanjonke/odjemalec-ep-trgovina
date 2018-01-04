@@ -14,7 +14,9 @@ import {Uporabnik} from "../login/models/uporabnik";
 export class ProfilComponent implements OnInit {
     uporabnik: Uporabnik;
     vloga: string;
-
+    pravice: string;
+    color: string;
+    tooltip: string;
     constructor(private route: ActivatedRoute,
                 private location: Location,
                 private router: Router) {
@@ -29,6 +31,16 @@ export class ProfilComponent implements OnInit {
             this.vloga = 'Stranka';
         }
         this.uporabnik = JSON.parse(localStorage.getItem('currentUser')) as Uporabnik;
+        let p = JSON.parse(localStorage.getItem('pravice')) as boolean;
+        if(p){
+            this.pravice = "Odobrene";
+            this.color = "LightBlue"
+            this.tooltip = "Imate možnost posodabljanja, dodajanja in aktiviranja strank"
+        } else {
+            this.pravice = "Odvzete";
+            this.color = "LightGray"
+            this.tooltip = "Nimate možnosti posodabljanja, dodajanja in aktiviranja strank"
+        }
     }
 
     nazaj(): void {
@@ -43,6 +55,10 @@ export class ProfilComponent implements OnInit {
             this.location.back();
         }
 
+    }
+
+    getBarva(): string {
+        return this.color;
     }
 
     jeAdmin(): boolean {
