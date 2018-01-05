@@ -4,10 +4,11 @@
         <mat-list>
             <h2>Artikli</h2>
 
-            <mat-list-item *ngFor="let artikel of artikli" class="list-item" (click)="naPodrobnosti(artikel.idartikel)">
-                <mat-icon matListIcon>description</mat-icon>
-                <h4 mat-line>{{artikel.naziv}}</h4>
-                <p mat-line> {{artikel.cena}} EUR</p>
+            <mat-list-item *ngFor="let artikel of artikli" class="list-item">
+                <mat-icon matListIcon (click)="naPodrobnosti(artikel.idartikel)">description</mat-icon>
+                <h4 mat-line (click)="naPodrobnosti(artikel.idartikel)">{{artikel.naziv}}</h4>
+                <mat-slide-toggle [checked]="artikel.aktiviran == 1" *ngIf="jeProdajalec()" (change)="putActivity($event, artikel)">Aktiviraj</mat-slide-toggle>
+                <p mat-line (click)="naPodrobnosti(artikel.idartikel)"> {{artikel.cena}} EUR</p>
             </mat-list-item>
         </mat-list>
     </div>

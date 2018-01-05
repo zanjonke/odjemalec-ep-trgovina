@@ -14,9 +14,16 @@ export class ArtikelService {
     constructor(private http: HttpClient) {
     }
 
-    getArtikli(): Promise<Artikel[]> {
+    getArtikliAktivirani(): Promise<Artikel[]> {
         const url = `${this.url}/aktivirani`
         return this.http.get(url)
+            .toPromise()
+            .then(response => response as Artikel[])
+            .catch(this.handleError);
+    }
+
+    getArtikli(): Promise<Artikel[]> {
+        return this.http.get(this.url)
             .toPromise()
             .then(response => response as Artikel[])
             .catch(this.handleError);
@@ -45,6 +52,21 @@ export class ArtikelService {
             .then()
             .catch(this.handleError);
     }
+
+    update(artikel: Artikel): Promise<void> {
+        var putdata = {
+            naziv: artikel.naziv,
+            opis: artikel.opis,
+            cena: artikel.cena,
+            aktiviran: artikel.aktiviran
+        }
+        const url = this.url + '/' + artikel.idartikel;
+        return this.http
+            .put(url, JSON.stringify(putdata), {headers: this.headers})
+            .toPromise()
+            .catch(this.handleError);
+    }
+
 
     private handleError(error: any): Promise<any> {
         console.error('Prišlo je do napake', error);

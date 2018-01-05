@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit{
                     } else {
                         localStorage.setItem('pravice',JSON.stringify(true));
                     }
-                    this.router.navigate(['/prodajalec/stranke']);
+                    this.router.navigate(['/prodajalec/artikli']);
                 }, reason => {console.log("Prišlo je do napake!")});
             }
         }

@@ -23,17 +23,34 @@ export class ArtikliComponent implements OnInit {
             .then(artikli => this.artikli = artikli);
     }
 
-
+    getArtikliAktivirani(): void {
+        this.artikliService
+            .getArtikliAktivirani()
+            .then(artikli => this.artikli = artikli);
+    }
     ngOnInit(): void {
-        this.getArtikli();
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            this.getArtikli()
+        } else {
+            this.getArtikliAktivirani()
+        }
     }
 
-    login(): void {
-        this.router.navigate(['/login']);
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     naPodrobnosti(id: number): void {
         this.router.navigate(['/artikli', id]);
+    }
+
+    putActivity(tr: Event, art: Artikel) {
+        art.aktiviran = tr.checked;
+        this.artikliService.update(art)
     }
 
 }
