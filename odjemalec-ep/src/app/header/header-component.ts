@@ -19,7 +19,7 @@ export class HeaderComponent {
 
     logout(): void {
         localStorage.clear();
-        this.router.navigate(['/artikli']);
+        this.router.navigate(['']);
     }
 
     goToHome(): void {

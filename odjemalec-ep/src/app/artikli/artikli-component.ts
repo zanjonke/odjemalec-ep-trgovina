@@ -49,7 +49,11 @@ export class ArtikliComponent implements OnInit {
     }
 
     putActivity(tr: Event, art: Artikel) {
-        art.aktiviran = tr.checked;
+        if (tr.checked == true) {
+            art.aktiviran = 1;
+        } else {
+            art.aktiviran = 0;
+        }
         this.artikliService.update(art)
     }
 
