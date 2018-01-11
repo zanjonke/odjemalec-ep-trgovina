@@ -9,7 +9,7 @@ import {Uporabnik} from '../models/uporabnik';
 export class LoginService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost:8080/netbeans/trgovina/api/login';
+    private url = 'https://localhost/netbeans/trgovina/api/login';
 
     constructor(private http: HttpClient) {
     }

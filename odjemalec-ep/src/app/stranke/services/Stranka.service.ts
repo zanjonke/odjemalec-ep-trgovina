@@ -9,7 +9,7 @@ import {Stranka} from '../models/stranka';
 export class StrankaService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost:8080/netbeans/trgovina/api/stranke';
+    private url = 'https://localhost/netbeans/trgovina/api/stranke';
 
     constructor(private http: HttpClient) {
     }

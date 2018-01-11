@@ -9,7 +9,7 @@ import {Prodajalec} from "../models/prodajalec";
 export class ProdajalecService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost:8080/netbeans/trgovina/api/prodajalci';
+    private url = 'https://localhost/netbeans/trgovina/api/prodajalci';
 
     constructor(private http: HttpClient) {
     }

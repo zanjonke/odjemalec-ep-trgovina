@@ -19,17 +19,15 @@ export class HeaderComponent {
 
     logout(): void {
         localStorage.clear();
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
     }
 
     goToHome(): void {
         if (localStorage.getItem("jeAdmin") === "true") {
             this.router.navigate(['/admin/prodajalci']);
-        } else if (localStorage.getItem("jeProdajalec") === "true") {
+        } else {
             this.router.navigate(['/artikli']);
-        } else if (localStorage.getItem("jeStranka") === "true") {
-            this.router.navigate(['/artikli']);
-        }
+        } 
     }
     goToProfile(): void {
         console.log("goToProfile()");

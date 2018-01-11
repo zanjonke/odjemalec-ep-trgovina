@@ -9,7 +9,7 @@ import {Artikel} from '../models/artikel';
 export class ArtikelService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
-    private url = 'http://localhost:8080/netbeans/trgovina/api/artikli';
+    private url = 'https://localhost/netbeans/trgovina/api/artikli';
 
     constructor(private http: HttpClient) {
     }
