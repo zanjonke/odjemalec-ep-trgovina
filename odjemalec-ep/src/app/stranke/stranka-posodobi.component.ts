@@ -14,8 +14,7 @@ import {StrankaService} from "./services/Stranka.service";
 })
 export class StrankaPosodobiComponent implements OnInit {
     stranka: Stranka;
-    pravice: boolean;
-
+    
     constructor(private route: ActivatedRoute,
                 private location: Location,
                 private router: Router,
@@ -24,7 +23,6 @@ export class StrankaPosodobiComponent implements OnInit {
 
     ngOnInit(): void {
         this.stranka = JSON.parse(localStorage.getItem('stranka')) as Stranka;
-        this.pravice = JSON.parse(localStorage.getItem('pravice')) as boolean;
     }
 
     nazaj(): void {

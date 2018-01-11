@@ -15,7 +15,6 @@ export class StrankaPodrobnostiComponent implements OnInit {
     stranka: Stranka;
     stanje: string;
     checked: string;
-    pravice: boolean;
     constructor(private strankaService: StrankaService,
                 private route: ActivatedRoute,
                 private location: Location,
@@ -23,7 +22,6 @@ export class StrankaPodrobnostiComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.pravice = JSON.parse(localStorage.getItem('pravice')) as boolean;
         this.stranka = JSON.parse(localStorage.getItem('stranka')) as Stranka;
         if(this.stranka.aktiviran === "0" || this.stranka.aktiviran === null){
           this.stanje = "Aktiviraj";
