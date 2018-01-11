@@ -15,9 +15,6 @@
                     Email: {{uporabnik.email}}
                 </mat-list-item>
                 <mat-list-item role="listitem">
-                    Geslo: {{uporabnik.geslo}}
-                </mat-list-item>
-                <mat-list-item role="listitem">
                     Vloga: {{vloga}}
                 </mat-list-item>
                 <mat-list-item *ngIf="jeStranka()" role="listitem">
@@ -25,9 +22,6 @@
                 </mat-list-item>
                 <mat-list-item *ngIf="jeStranka()" role="listitem">
                     Naslov: {{uporabnik.naslov}}
-                </mat-list-item>
-                <mat-list-item role="listitem" matTooltip={{tooltip}} [ngStyle]="{'background-color': getBarva()}"*ngIf="jeProdajalec()">
-                    Pravice: {{pravice}}
                 </mat-list-item>
             </mat-list>
         </mat-card>

@@ -35,7 +35,7 @@ export class ProfilPosodobiComponent implements OnInit {
         } else {
             this.vloga = 'Stranka';
         }
-        this.uporabnik = JSON.parse(localStorage.getItem('currentUser')) as Uporabnik;
+        this.uporabnik = JSON.parse(localStorage.getItem('me')) as Uporabnik;
     }
 
     nazaj(): void {
@@ -64,7 +64,7 @@ export class ProfilPosodobiComponent implements OnInit {
         }
     }
     posodobi(): void {
-        localStorage.setItem('currentUser', JSON.stringify(this.uporabnik));
+        localStorage.setItem('me', JSON.stringify(this.uporabnik));
         if (this.uporabnik.idprodajalec != null){
             this.updateProdajalec();
         } else if(this.uporabnik.idadmin != null){

@@ -14,7 +14,6 @@ export class StrankeComponent implements OnInit {
     Nstranke: Stranka[] = [];
     Astranke: Stranka[] = [];
     razvrsceno: boolean;
-    pravice: boolean;
     constructor(private strankeService: StrankaService,
                 private router: Router) {
     }
@@ -36,12 +35,6 @@ export class StrankeComponent implements OnInit {
             localStorage.setItem('razvrsceno',JSON.stringify(this.razvrsceno));
         } else {
             this.razvrsceno = JSON.parse(localStorage.getItem('razvrsceno')) as boolean;
-        }
-        this.pravice = JSON.parse(localStorage.getItem('pravice')) as boolean;
-        if(this.pravice){
-            console.log("PRAVICE SO ODOBRENE");
-        } else {
-            console.log("NIMATE PRAVIC");
         }
         this.getStranke();
     }

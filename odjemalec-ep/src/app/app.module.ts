@@ -16,7 +16,7 @@ import {ArtikelService} from "./artikli/services/artikel.service";
 import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
 import {LoginComponent} from "./login/login-component";
-import {UporabnikService} from "./login/services/uporabnik.service";
+import {LoginService} from "./login/services/login.service";
 import {ProfilComponent} from "./profil/profil-component";
 import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
 import {MatProgressSpinnerModule} from "@angular/material";
@@ -24,7 +24,7 @@ import {ProdajalciComponent} from "./prodajalci/prodajalci-component";
 import {ProdajalecService} from "./prodajalci/services/prodajalec.service";
 import {ProdajalecPodrobnostiComponent} from "./prodajalci/prodajalci-podrobnosti.component";
 import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.component";
-import {ProdajalecDodajComponent} from "./prodajalci/prodajalci.dodaj.component";
+import {ProdajalecDodajComponent} from "./prodajalci/prodajalci-dodaj.component";
 import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 
@@ -49,7 +49,7 @@ import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
         ProfilComponent, ProfilPosodobiComponent,
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
     ],
-    providers: [StrankaService, ArtikelService, UporabnikService, ProdajalecService],
+    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

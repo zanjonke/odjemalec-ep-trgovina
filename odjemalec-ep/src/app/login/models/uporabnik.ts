@@ -8,4 +8,5 @@ export class Uporabnik {
     geslo: string;
     naslov: string;
     telefon: string;
+    tip: number;
 }

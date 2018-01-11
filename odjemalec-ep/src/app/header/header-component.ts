@@ -26,7 +26,7 @@ export class HeaderComponent {
         if (localStorage.getItem("jeAdmin") === "true") {
             this.router.navigate(['/admin/prodajalci']);
         } else if (localStorage.getItem("jeProdajalec") === "true") {
-            this.router.navigate(['/prodajalec/artikli']);
+            this.router.navigate(['/artikli']);
         } else if (localStorage.getItem("jeStranka") === "true") {
             this.router.navigate(['/artikli']);
         }

@@ -23,9 +23,6 @@
                 <mat-form-field class="example-full-width">
                     <input for="email" id="email" name="email" [(ngModel)]="uporabnik.email" matInput placeholder="Email" value={{uporabnik.email}} >
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="uporabnik.geslo" matInput placeholder="Geslo" value={{uporabnik.geslo}} >
-                </mat-form-field>
                 <mat-form-field class="example-full-width" *ngIf="jeStranka()">
                     <input for="naslov" id="naslov" name="naslov" [(ngModel)]="uporabnik.naslov" matInput placeholder="Naslov" value={{uporabnik.naslov}} >
                 </mat-form-field>

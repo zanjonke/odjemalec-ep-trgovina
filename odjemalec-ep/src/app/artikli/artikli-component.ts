@@ -28,6 +28,7 @@ export class ArtikliComponent implements OnInit {
             .getArtikliAktivirani()
             .then(artikli => this.artikli = artikli);
     }
+    
     ngOnInit(): void {
         if (localStorage.getItem("jeProdajalec") === "true") {
             this.getArtikli()
@@ -49,11 +50,12 @@ export class ArtikliComponent implements OnInit {
     }
 
     putActivity(tr: Event, art: Artikel) {
-        if (tr.checked == true) {
+        if (art.aktiviran == 0) {
             art.aktiviran = 1;
         } else {
             art.aktiviran = 0;
         }
+        console.log(art.aktiviran)
         this.artikliService.update(art)
     }
 

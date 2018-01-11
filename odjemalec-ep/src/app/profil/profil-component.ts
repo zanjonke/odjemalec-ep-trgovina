@@ -14,7 +14,6 @@ import {Uporabnik} from "../login/models/uporabnik";
 export class ProfilComponent implements OnInit {
     uporabnik: Uporabnik;
     vloga: string;
-    pravice: string;
     color: string;
     tooltip: string;
     constructor(private route: ActivatedRoute,
@@ -30,17 +29,7 @@ export class ProfilComponent implements OnInit {
         } else {
             this.vloga = 'Stranka';
         }
-        this.uporabnik = JSON.parse(localStorage.getItem('currentUser')) as Uporabnik;
-        let p = JSON.parse(localStorage.getItem('pravice')) as boolean;
-        if(p){
-            this.pravice = "Odobrene";
-            this.color = "LightBlue"
-            this.tooltip = "Imate možnost posodabljanja, dodajanja in aktiviranja strank"
-        } else {
-            this.pravice = "Odvzete";
-            this.color = "LightGray"
-            this.tooltip = "Nimate možnosti posodabljanja, dodajanja in aktiviranja strank"
-        }
+        this.uporabnik = JSON.parse(localStorage.getItem('me'));
     }
 
     nazaj(): void {
