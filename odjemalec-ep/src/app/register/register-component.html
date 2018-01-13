@@ -9,6 +9,7 @@
         width: 100%;
     }
 </style>
+
 <mat-card>
     <mat-card-title>Registriraj se</mat-card-title>
     <mat-card-content>
@@ -33,6 +34,10 @@
                     <input  for="telefon" id="telefon" name="telefon" [(ngModel)]="stranka.telefon" matInput placeholder="telefon" value={{stranka.telefon}} required>
                 </mat-form-field>
             </form>
+            <re-captcha
+                (resolved)="resolved($event)"
+                siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"
+            ></re-captcha>
         </div>
     </mat-card-content>
     <button mat-raised-button color="primary" (click)="nazaj()">Nazaj</button>

@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import { MaterialModule } from './material.module';
 import {MatInputModule} from '@angular/material/input';
+import { RecaptchaModule } from 'ng-recaptcha';
+
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header-component';
 import {StrankeComponent} from "./stranke/stranke-component";
@@ -38,7 +40,8 @@ import {RegisterComponent} from "./register/register-component";
         BrowserAnimationsModule,
         MaterialModule,
         MatInputModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        RecaptchaModule.forRoot()
     ],
     declarations: [
         AppComponent,

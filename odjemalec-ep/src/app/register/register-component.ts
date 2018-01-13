@@ -12,12 +12,20 @@ import {StrankaService} from "../stranke/services/Stranka.service";
 })
 export class RegisterComponent implements OnInit {
     stranka: Stranka;
-    missingData: boolean = false;
+    missingData: boolean = false
+    recaptcha: boolean = false
 
     constructor(private route: ActivatedRoute,
                 private location: Location,
                 private router: Router,
                 private strankaService: StrankaService) {
+    }
+
+    public resolved(captchaResponse: string) {
+        console.log(`Resolved captcha with response ${captchaResponse}:`);
+        if (captchaResponse)  {
+            this.recaptcha = true
+        } 
     }
 
     ngOnInit(): void {
@@ -38,7 +46,7 @@ export class RegisterComponent implements OnInit {
     potrdi(): void {
         if (this.pravilnoIzpolnjeno()) {
             this.strankaService.create(this.stranka).then(resp => {
-                this.router.navigate(['/prodajalec/stranke']);
+                this.router.navigate(['/login']);
             });
         } else {
             this.missingData = true;
@@ -46,12 +54,13 @@ export class RegisterComponent implements OnInit {
     }
 
     pravilnoIzpolnjeno(): boolean {
-        if (this.stranka.ime != null &&
-            this.stranka.priimek != null &&
-            this.stranka.email != null &&
-            this.stranka.geslo != null &&
-            this.stranka.naslov != null &&
-            this.stranka.telefon != null) {
+        if (this.stranka.ime != '' &&
+            this.stranka.priimek != '' &&
+            this.stranka.email != '' &&
+            this.stranka.geslo != '' &&
+            this.stranka.naslov != '' &&
+            this.stranka.telefon != '' &&
+            this.recaptcha) {
             return true;
         } else {
             return false;
