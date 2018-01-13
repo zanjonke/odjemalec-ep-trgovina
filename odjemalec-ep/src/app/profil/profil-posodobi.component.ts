@@ -64,19 +64,21 @@ export class ProfilPosodobiComponent implements OnInit {
         }
     }
     posodobi(): void {
-        localStorage.setItem('me', JSON.stringify(this.uporabnik));
-        if (this.uporabnik.idprodajalec != null){
-            this.updateProdajalec();
-        } else if(this.uporabnik.idadmin != null){
-            this.updateAdmin();
-        } else if (this.uporabnik.idstranka != null){
-            this.updateStranka();
+        if (this.uporabnik.geslo != '' && this.uporabnik.geslo != null) {
+            localStorage.setItem('me', JSON.stringify(this.uporabnik));
+            if (this.uporabnik.idprodajalec != null){
+                this.updateProdajalec();
+            } else if(this.uporabnik.idadmin != null){
+                this.updateAdmin();
+            } else if (this.uporabnik.idstranka != null){
+                this.updateStranka();
+            }
+            this.router.navigate(['/profil'])
         }
-        this.router.navigate(['/profil']);
     }
 
     updateStranka(): Promise<void> {
-        const url = `http://localhost:8080/netbeans/trgovina/api/stranke/` + this.uporabnik.idstranka;
+        const url = `https://localhost/netbeans/trgovina/api/stranke/` + this.uporabnik.idstranka;
         let s = new Stranka();
         s.ime = this.uporabnik.ime;
         s.priimek = this.uporabnik.priimek;
@@ -84,38 +86,39 @@ export class ProfilPosodobiComponent implements OnInit {
         s.naslov = this.uporabnik.naslov;
         s.telefon = this.uporabnik.telefon;
         s.email = this.uporabnik.email;
+        s.aktiviran = this.uporabnik.aktiviran;
         return this.http
-            .put(url, JSON.stringify(s), {headers: this.headers})
+            .put(url, JSON.stringify(s), {headers: this.headers, responseType: 'text'})
             .toPromise()
             .catch(this.handleError);
-
     }
 
     updateProdajalec(): Promise<void> {
-        const url = `http://localhost:8080/netbeans/trgovina/api/prodajalci/` + this.uporabnik.idprodajalec;
+        const url = `https://localhost/netbeans/trgovina/api/prodajalci/` + this.uporabnik.idprodajalec;
         let p = new Prodajalec();
         p.ime = this.uporabnik.ime;
         p.priimek = this.uporabnik.priimek;
         p.geslo = this.uporabnik.geslo;
         p.email = this.uporabnik.email;
+        p.aktiviran = this.uporabnik.aktiviran;
         return this.http
-            .put(url, JSON.stringify(p), {headers: this.headers})
+            .put(url, JSON.stringify(p), {headers: this.headers, responseType: 'text'})
             .toPromise()
             .catch(this.handleError);
 
     }
     updateAdmin(): Promise<void> {
-        const url = `http://localhost:8080/netbeans/trgovina/api/admini/` + this.uporabnik.idadmin;
+        const url = `https://localhost/netbeans/trgovina/api/admini/` + this.uporabnik.idadmin;
         let a = new Admin();
         a.ime = this.uporabnik.ime;
         a.priimek = this.uporabnik.priimek;
         a.geslo = this.uporabnik.geslo;
         a.email = this.uporabnik.email;
         return this.http
-            .put(url, JSON.stringify(a), {headers: this.headers})
+            .put(url, JSON.stringify(a), {headers: this.headers, responseType: 'text'})
             .toPromise()
+            .then()
             .catch(this.handleError);
-
     }
 
     private handleError(error: any): Promise<any> {

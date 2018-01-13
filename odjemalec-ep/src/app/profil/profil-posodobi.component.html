@@ -29,6 +29,10 @@
                 <mat-form-field class="example-full-width" *ngIf="jeStranka()">
                     <input for="telefon" id="telefon" name="telefon" [(ngModel)]="uporabnik.telefon" matInput placeholder="Telefon" value={{uporabnik.telefon}} >
                 </mat-form-field>
+                <mat-form-field class="example-full-width"> 
+                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="uporabnik.geslo" matInput placeholder="Geslo" value={{uporabnik.geslo}} required>
+                    <mat-error>Please enter new or existing password</mat-error> 
+                </mat-form-field> 
             </form>
         </div>
     </mat-card-content>

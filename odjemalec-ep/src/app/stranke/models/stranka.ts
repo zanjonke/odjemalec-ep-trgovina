@@ -6,5 +6,5 @@ export class Stranka {
     geslo: string;
     telefon: string;
     naslov: string;
-    aktiviran: string;
+    aktiviran: number;
 }

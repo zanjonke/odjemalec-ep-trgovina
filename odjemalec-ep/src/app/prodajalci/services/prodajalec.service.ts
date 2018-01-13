@@ -40,17 +40,19 @@ export class ProdajalecService {
 
     create(prodajalec: Prodajalec): Promise<void> {
         return this.http
-            .post(this.url, JSON.stringify(prodajalec), {headers: this.headers})
+            .post(this.url, JSON.stringify(prodajalec), {headers: this.headers, responseType: 'text'})
             .toPromise()
             .then()
             .catch(this.handleError);
     }
 
     update(prodajalec: Prodajalec): Promise<void> {
+        console.log(prodajalec.geslo)
         const url = this.url + '/' + prodajalec.idprodajalec;
         return this.http
-            .put(url, JSON.stringify(prodajalec), {headers: this.headers})
+            .put(url, JSON.stringify(prodajalec), {headers: this.headers, responseType: 'text'})
             .toPromise()
+            .then()
             .catch(this.handleError);
     }
 

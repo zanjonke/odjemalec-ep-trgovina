@@ -41,7 +41,7 @@ export class StrankaService {
     create(stranka: Stranka): Promise<void> {
         console.log(this.url);
         return this.http
-            .post(this.url, JSON.stringify(stranka), {headers: this.headers})
+            .post(this.url, JSON.stringify(stranka), {headers: this.headers, responseType: 'text'})
             .toPromise()
             .then()
             .catch(this.handleError);
@@ -60,7 +60,7 @@ export class StrankaService {
         this.print(stranka);
         const url = this.url + '/' + stranka.idstranka;
         return this.http
-            .put(url, JSON.stringify(stranka), {headers: this.headers})
+            .put(url, JSON.stringify(stranka), {headers: this.headers, responseType: 'text'})
             .toPromise()
             .catch(this.handleError);
     }

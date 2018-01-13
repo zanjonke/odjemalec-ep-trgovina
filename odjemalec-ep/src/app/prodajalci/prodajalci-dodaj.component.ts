@@ -27,7 +27,7 @@ export class ProdajalecDodajComponent implements OnInit {
         this.prodajalec.priimek = '';
         this.prodajalec.email = '';
         this.prodajalec.geslo = '';
-        this.prodajalec.aktiviran = "0";
+        this.prodajalec.aktiviran = 0;
     }
 
     nazaj(): void {

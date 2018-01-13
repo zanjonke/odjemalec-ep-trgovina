@@ -41,7 +41,7 @@ export class ProdajalciComponent implements OnInit {
         localStorage.setItem('razvrsceno', JSON.stringify(this.razvrsceno));
         if (this.Nprodajalci.length == 0 && this.Aprodajalci.length == 0) {
             for (let prodajalec of this.prodajalci) {
-                if (prodajalec.aktiviran === "0") {
+                if (prodajalec.aktiviran == 0) {
                     this.Nprodajalci.push(prodajalec);
                 } else {
                     this.Aprodajalci.push(prodajalec);

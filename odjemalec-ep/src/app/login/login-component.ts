@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit{
                 localStorage.setItem('me', JSON.stringify(uporabnik));
                 // stranka => 0, prodajalec => 1, admin => 2
                 if (this.uporabnik.tip == 0) {
+                    localStorage.setItem('jeStranka', JSON.stringify(true));
                     this.router.navigate(['/artikli']);
                 } else if (this.uporabnik.tip == 1){
                     localStorage.setItem('jeProdajalec', JSON.stringify(true));

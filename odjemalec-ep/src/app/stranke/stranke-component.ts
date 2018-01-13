@@ -49,7 +49,7 @@ export class StrankeComponent implements OnInit {
         localStorage.setItem('razvrsceno',JSON.stringify(this.razvrsceno));
         if(this.Nstranke.length == 0 && this.Astranke.length == 0){
             for(let stranka of this.stranke){
-                if(stranka.aktiviran === "0" || stranka.aktiviran === null){
+                if(stranka.aktiviran == 0 || stranka.aktiviran === null){
                     this.Nstranke.push(stranka);
                 } else {
                     this.Astranke.push(stranka);

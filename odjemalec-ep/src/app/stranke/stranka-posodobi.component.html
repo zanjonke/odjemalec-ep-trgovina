@@ -24,7 +24,8 @@
                     <input for="email" id="email" name="email" [(ngModel)]="stranka.email" matInput placeholder="Email" value={{stranka.email}} >
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="stranka.geslo" matInput placeholder="Geslo" value={{stranka.geslo}} >
+                    <input type="password" for="geslo" id="geslo" name="geslo" [(ngModel)]="stranka.geslo" matInput placeholder="Geslo" value={{stranka.geslo}} required>
+                    <mat-error>Please enter new or existing password</mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <input  for="naslov" id="naslov" name="naslov" [(ngModel)]="stranka.naslov" matInput placeholder="naslov" value={{stranka.naslov}} >
@@ -32,6 +33,7 @@
                 <mat-form-field class="example-full-width">
                     <input  for="telefon" id="telefon" name="telefon" [(ngModel)]="stranka.telefon" matInput placeholder="telefon" value={{stranka.telefon}} >
                 </mat-form-field>
+                <mat-slide-toggle color="primary" [checked]="checked" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
             </form>
         </div>
     </mat-card-content>

@@ -26,7 +26,7 @@ export class StrankaDodajComponent implements OnInit {
         this.stranka.priimek = '';
         this.stranka.email = '';
         this.stranka.geslo = '';
-        this.stranka.aktiviran = "0";
+        this.stranka.aktiviran = 0;
         this.stranka.naslov = '';
         this.stranka.telefon = '';
     }

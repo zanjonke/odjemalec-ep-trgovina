@@ -13,7 +13,9 @@ import {ProdajalecService} from "./services/prodajalec.service";
 })
 export class ProdajalecPosodobiComponent implements OnInit {
     prodajalec: Prodajalec;
-
+    missingPassword: boolean = false;
+    stanje: string;
+    checked: string;
 
     constructor(private route: ActivatedRoute,
                 private location: Location,
@@ -23,6 +25,21 @@ export class ProdajalecPosodobiComponent implements OnInit {
 
     ngOnInit(): void {
         this.prodajalec = JSON.parse(localStorage.getItem('prodajalec')) as Prodajalec;
+        if(this.prodajalec.aktiviran == 0){
+            this.stanje = 'Aktiviraj';
+        } else {
+            this.stanje = 'Deaktiviraj';
+            this.checked= "checked";
+        }
+    }
+    zamenjaj(): void {
+        //TODO -> aktiviranje/deaktiviranje prodajalca
+        if (this.stanje == 'Aktiviraj') {
+            this.stanje = 'Deaktiviraj';
+        } else {
+            this.checked= "checked";
+            this.stanje = 'Aktiviraj';
+        }
     }
 
     nazaj(): void {
@@ -30,9 +47,19 @@ export class ProdajalecPosodobiComponent implements OnInit {
     }
 
     posodobi(): void {
-        this.prodajalecService.update(this.prodajalec);
-        localStorage.setItem('prodajalec', JSON.stringify(this.prodajalec));
-        this.router.navigate(['/admin/prodajalci/podrobnosti']);
+        if (this.prodajalec.geslo == '' || this.prodajalec.geslo == null) {
+            this.missingPassword = true
+        } else {
+            if (this.stanje == 'Aktiviraj') {
+                this.prodajalec.aktiviran = 0
+            } else if (this.stanje == 'Deaktiviraj') {
+                this.prodajalec.aktiviran = 1
+            }
+            this.missingPassword = false
+            this.prodajalecService.update(this.prodajalec);
+            localStorage.setItem('prodajalec', JSON.stringify(this.prodajalec));
+            this.router.navigate(['/admin/prodajalci/podrobnosti']);
+        }
     }
 
 }
