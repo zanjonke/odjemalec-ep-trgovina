@@ -14,12 +14,14 @@ import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.comp
 import {ProdajalecDodajComponent} from "./prodajalci/prodajalci-dodaj.component";
 import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
+import {RegisterComponent} from "./register/register-component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
     {path: 'artikli', component: ArtikliComponent},
     {path: 'artikli/:id', component: ArtikliPodrobnostiComponent},
     {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
     // prodajalec specific views
     {path: 'prodajalec/stranke', component: StrankeComponent},
     {path: 'prodajalec/stranke/podrobnosti', component: StrankaPodrobnostiComponent},

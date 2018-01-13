@@ -27,6 +27,7 @@ import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.comp
 import {ProdajalecDodajComponent} from "./prodajalci/prodajalci-dodaj.component";
 import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
+import {RegisterComponent} from "./register/register-component";
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
         HeaderComponent,
         ProfilComponent, ProfilPosodobiComponent,
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
+        RegisterComponent
     ],
     providers: [StrankaService, ArtikelService, LoginService, ProdajalecService],
     bootstrap: [AppComponent]
