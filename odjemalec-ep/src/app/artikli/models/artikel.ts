@@ -4,4 +4,5 @@ export class Artikel {
     opis: string;
     cena: number;
     aktiviran: number;
+    ocena: number;
 }

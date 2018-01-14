@@ -8,6 +8,8 @@
                 <mat-icon matListIcon (click)="naPodrobnosti(artikel.idartikel)">description</mat-icon>
                 <h4 mat-line (click)="naPodrobnosti(artikel.idartikel)">{{artikel.naziv}}</h4>
                 <mat-slide-toggle [checked]="artikel.aktiviran == 1" *ngIf="jeProdajalec()" (change)="putActivity($event, artikel)">Aktiviraj</mat-slide-toggle>
+                <div *ngIf="artikel.ocena && jeStranka()"><span class="rating">Rating: {{artikel.ocena}}</span></div>
+                <div *ngIf="!artikel.ocena && jeStranka()"><small>Not yet rated</small></div>
                 <p mat-line (click)="naPodrobnosti(artikel.idartikel)"> {{artikel.cena}} EUR</p>
             </mat-list-item>
         </mat-list>
@@ -19,5 +21,9 @@
     .list-item:hover{
         cursor: pointer;
         background-color: darkgray;    
+    }
+
+    .rating {
+        display: inline;
     }
 </style>

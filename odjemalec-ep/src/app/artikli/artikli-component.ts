@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import {Artikel} from './models/artikel';
 import {ArtikelService} from './services/artikel.service';
+import {OceneService} from './services/ocene.service';
 
 @Component({
     moduleId: module.id,
@@ -14,20 +15,38 @@ export class ArtikliComponent implements OnInit {
 
 
     constructor(private artikliService: ArtikelService,
+                private oceneService: OceneService,
                 private router: Router) {
     }
 
     getArtikli(): void {
         this.artikliService
             .getArtikli()
-            .then(artikli => this.artikli = artikli);
+            .then(artikli => {
+                this.artikli = artikli;
+            })
     }
 
     getArtikliAktivirani(): void {
         this.artikliService
             .getArtikliAktivirani()
-            .then(artikli => this.artikli = artikli);
+            .then(artikli => {
+                this.artikli = artikli;
+                this.getRatings(artikli)
+            })
     }
+    
+    getRatings(art: Artikel[]): void {
+        console.log("ratings")
+        art.forEach( (element) => {
+            this.oceneService
+                .getOcene(element.idartikel)
+                .then(ocene => {
+                    element.ocena = ocene[0].average
+                })
+        })     
+    }
+    
     
     ngOnInit(): void {
         if (localStorage.getItem("jeProdajalec") === "true") {
@@ -39,6 +58,14 @@ export class ArtikliComponent implements OnInit {
 
     jeProdajalec(): boolean {
         if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    jeStranka(): boolean {
+        if (localStorage.getItem("jeStranka") === "true") {
             return true;
         } else {
             return false;

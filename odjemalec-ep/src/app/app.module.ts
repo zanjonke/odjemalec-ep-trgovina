@@ -16,6 +16,7 @@ import {StrankeComponent} from "./stranke/stranke-component";
 import {StrankaService} from "./stranke/services/Stranka.service";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
 
+import {OceneService} from "./artikli/services/ocene.service"
 import {ArtikelService} from "./artikli/services/artikel.service";
 import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
@@ -47,7 +48,7 @@ import {RegisterComponent} from "./register/register-component";
         MaterialModule,
         MatInputModule,
         MatProgressSpinnerModule,
-        RecaptchaModule.forRoot()
+        RecaptchaModule.forRoot(),
     ],
     declarations: [
         AppComponent,
@@ -60,7 +61,7 @@ import {RegisterComponent} from "./register/register-component";
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
         RegisterComponent
     ],
-    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService],
+    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
