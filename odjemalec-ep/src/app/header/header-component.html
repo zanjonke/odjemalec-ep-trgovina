@@ -1,18 +1,18 @@
 <mat-toolbar *ngIf="jeAdmin()" color="primary">
     <span>Admin</span>
-    <button mat-button (click)="goToProdajalci()">Prodajalci TODO</button>
+    <button mat-button (click)="goToProdajalci()">Prodajalci</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
-    <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile</button>
+    <button mat-raised-button color="accent" (click)=logout()>Logout</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="jeProdajalec()" color="primary">
     <span (click)=goToHome()>Prodajalec</span>
     <button mat-button (click)=goToHome()>Artikli TODO</button>
-    <button mat-button (click)=goToStranke()>Stranke TODO</button>
+    <button mat-button (click)=goToStranke()>Stranke</button>
     <button mat-button (click)=goToHome()>Naročila TODO</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
-    <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile</button>
+    <button mat-raised-button color="accent" (click)=logout()>Logout</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="jeStranka()" color="primary">
     <span (click)=goToHome()>Trgovina</span>
@@ -20,15 +20,15 @@
     <button mat-button (click)=goToHome()>Košarica TODO</button>
     <button mat-button (click)=goToHome()>Naročila TODO</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)="goToProfile()">Profile TODO</button>
-    <button mat-raised-button color="accent" (click)=logout()>Logout TODO</button>
+    <button mat-raised-button color="primary" (click)="goToProfile()">Profile</button>
+    <button mat-raised-button color="accent" (click)=logout()>Logout</button>
 </mat-toolbar>
 <mat-toolbar *ngIf="!jeStranka() && !jeProdajalec() && !jeAdmin()" color="primary">
     <span (click)=goToHome()>Trgovina</span>
     <button mat-button (click)="goToHome()">Artikli</button>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)=goToLogin()>Login TODO</button>
-    <button mat-raised-button color="accent" (click)=goToRegister()>Register TODO</button>
+    <button mat-raised-button color="primary" (click)=goToLogin()>Login</button>
+    <button mat-raised-button color="accent" (click)=goToRegister()>Register</button>
 </mat-toolbar>
 
 <style>

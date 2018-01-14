@@ -59,4 +59,8 @@ export class ArtikliComponent implements OnInit {
         this.artikliService.update(art)
     }
 
+    dodaj(): void {
+        this.router.navigate(['/prodajalec/artikli/dodaj']);
+    }
+
 }

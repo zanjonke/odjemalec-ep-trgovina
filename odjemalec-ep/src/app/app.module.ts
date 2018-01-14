@@ -11,14 +11,20 @@ import { RecaptchaModule } from 'ng-recaptcha';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header-component';
+
 import {StrankeComponent} from "./stranke/stranke-component";
 import {StrankaService} from "./stranke/services/Stranka.service";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
+
 import {ArtikelService} from "./artikli/services/artikel.service";
 import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
+import {ArtikliPosodobiComponent} from "./artikli/artikli-posodobi.component";
+import {ArtikliDodajComponent} from "./artikli/artikli-dodaj.component";
+
 import {LoginComponent} from "./login/login-component";
 import {LoginService} from "./login/services/login.service";
+
 import {ProfilComponent} from "./profil/profil-component";
 import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
 import {MatProgressSpinnerModule} from "@angular/material";
@@ -47,7 +53,7 @@ import {RegisterComponent} from "./register/register-component";
         AppComponent,
         StrankeComponent, StrankaPodrobnostiComponent,StrankaPosodobiComponent,StrankaDodajComponent,
         ArtikliComponent,
-        ArtikliPodrobnostiComponent,
+        ArtikliPodrobnostiComponent, ArtikliPosodobiComponent, ArtikliDodajComponent,
         LoginComponent,
         HeaderComponent,
         ProfilComponent, ProfilPosodobiComponent,

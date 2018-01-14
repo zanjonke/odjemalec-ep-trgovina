@@ -29,4 +29,20 @@ export class ArtikliPodrobnostiComponent implements OnInit {
     nazaj(): void {
         this.router.navigate(['/artikli']);
     }
+
+    posodobi(): void {
+        this.router.navigate(['/prodajalec/artikli/'+ this.artikel.idartikel +'/posodobi']);
+    }
+
+    zbrisi(): void {
+        console.log("TODO")
+    }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

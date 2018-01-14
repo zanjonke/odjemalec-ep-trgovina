@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
+import {ArtikliPosodobiComponent} from "./artikli/artikli-posodobi.component";
+import {ArtikliDodajComponent} from "./artikli/artikli-dodaj.component";
 import {LoginComponent} from "./login/login-component";
 import {StrankeComponent} from "./stranke/stranke-component";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
@@ -27,6 +29,8 @@ const routes: Routes = [
     {path: 'prodajalec/stranke/podrobnosti', component: StrankaPodrobnostiComponent},
     {path: 'prodajalec/stranke/posodobi', component: StrankaPosodobiComponent},
     {path: 'prodajalec/stranke/dodaj', component: StrankaDodajComponent},
+    {path: 'prodajalec/artikli/:id/posodobi', component: ArtikliPosodobiComponent},
+    {path: 'prodajalec/artikli/dodaj', component: ArtikliDodajComponent},
     {path: 'profil', component: ProfilComponent},
     {path: 'profil/posodobi', component: ProfilPosodobiComponent},
     //admin specific views
