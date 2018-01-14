@@ -16,7 +16,9 @@ import {StrankeComponent} from "./stranke/stranke-component";
 import {StrankaService} from "./stranke/services/Stranka.service";
 import {StrankaPodrobnostiComponent} from "./stranke/stranka-podrobnosti.component";
 
-import {OceneService} from "./artikli/services/ocene.service"
+import {OceneService} from "./artikli/services/ocene.service";
+import {KosaricaService} from "./artikli/services/kosarica.service";
+import {KosaricaComponent} from "./artikli/kosarica-component";
 import {ArtikelService} from "./artikli/services/artikel.service";
 import {ArtikliComponent} from "./artikli/artikli-component";
 import {ArtikliPodrobnostiComponent} from "./artikli/artikli-podrobnosti.component";
@@ -55,13 +57,14 @@ import {RegisterComponent} from "./register/register-component";
         StrankeComponent, StrankaPodrobnostiComponent,StrankaPosodobiComponent,StrankaDodajComponent,
         ArtikliComponent,
         ArtikliPodrobnostiComponent, ArtikliPosodobiComponent, ArtikliDodajComponent,
+        KosaricaComponent,
         LoginComponent,
         HeaderComponent,
         ProfilComponent, ProfilPosodobiComponent,
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
         RegisterComponent
     ],
-    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService],
+    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService, KosaricaService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

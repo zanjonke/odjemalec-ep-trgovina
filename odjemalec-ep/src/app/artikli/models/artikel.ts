@@ -5,4 +5,5 @@ export class Artikel {
     cena: number;
     aktiviran: number;
     ocena: number;
+    kolicina: number;
 }

@@ -17,6 +17,7 @@ import {ProdajalecDodajComponent} from "./prodajalci/prodajalci-dodaj.component"
 import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 import {RegisterComponent} from "./register/register-component";
+import {KosaricaComponent} from "./artikli/kosarica-component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
@@ -24,6 +25,8 @@ const routes: Routes = [
     {path: 'artikli/:id', component: ArtikliPodrobnostiComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
+    // stranka specific views
+    {path: 'stranka/kosarica', component: KosaricaComponent},
     // prodajalec specific views
     {path: 'prodajalec/stranke', component: StrankeComponent},
     {path: 'prodajalec/stranke/podrobnosti', component: StrankaPodrobnostiComponent},

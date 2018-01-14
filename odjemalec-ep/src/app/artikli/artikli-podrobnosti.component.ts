@@ -5,8 +5,11 @@ import {Location} from '@angular/common';
 
 import {Artikel} from './models/artikel';
 import {Ocene} from './models/ocena';
+import {Kosarica} from './models/kosarica';
 import {ArtikelService} from './services/artikel.service';
 import {OceneService} from './services/ocene.service';
+import {KosaricaService} from './services/kosarica.service';
+
 
 @Component({
     moduleId: module.id,
@@ -19,12 +22,15 @@ export class ArtikliPodrobnostiComponent implements OnInit {
     selectedValue: number;
     ratings: number[] = [1,2,3,4,5];
     idStr: number;
+    kosarica: Kosarica[];
+    jeDodano: boolean;
 
     constructor(private artikelService: ArtikelService,
                 private oceneService: OceneService,
                 private route: ActivatedRoute,
                 private location: Location,
-                private router: Router) {
+                private router: Router,
+                private kosaricaService: KosaricaService) {
     }
 
     ngOnInit(): void {
@@ -49,6 +55,10 @@ export class ArtikliPodrobnostiComponent implements OnInit {
                 this.artikel = data1
             })
         this.idStr = str.idstranka
+
+        this.kosaricaService
+            .getKosarica(str.idstranka)
+            .then(data => this.kosarica = data)
     }
 
     nazaj(): void {
@@ -67,8 +77,19 @@ export class ArtikliPodrobnostiComponent implements OnInit {
         }
     }
 
-    vKosarico(): void {
-        console.log("TODO")
+    vKosarico(): any {
+        let put = false
+        this.kosarica.forEach( (element) => {
+            if (this.artikel.idartikel == element.idartikel_kosarica) {
+                put = true
+                let newKolicina: number = +element.kolicina + 1
+                this.kosaricaService.update(this.artikel.idartikel, this.idStr, newKolicina)
+            }
+        })
+        if (!put){
+            this.kosaricaService.create(this.artikel.idartikel, this.idStr, 1)
+        }
+        this.jeDodano = true
     }
 
     zbrisi(): void {

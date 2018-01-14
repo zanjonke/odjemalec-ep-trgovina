@@ -1,0 +1,36 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<mat-card>
+    <div class="list">
+        <mat-list>
+            <h2>Košarica</h2>
+
+            <mat-list-item *ngFor="let artikel of artikli" class="list-item">
+                <mat-icon matListIcon>description</mat-icon>
+                <h4 mat-line >{{artikel.naziv}}</h4>
+                <input type="number" min="1" max="20" [(ngModel)]="artikel.kolicina" value="{{artikel.kolicina}}" (change)="update(artikel)">
+                <button mat-icon-button (click)="zbrisi(artikel)">
+                    <mat-icon color="accent">delete</mat-icon>
+                 </button>
+                <p mat-line > {{artikel.cena}} EUR</p>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <mat-card-actions>
+        <h4 mat-line>Skupna cena: {{skupnaCena}} EUR</h4>
+        <button class="buttRight mat-raised-button mat-primary" (click)="oddaj()">Oddaj naročilo</button>
+    </mat-card-actions>
+</mat-card>
+
+<style>
+    .list-item:hover{
+        cursor: pointer;   
+    }
+
+    .rating {
+        display: inline;
+    }
+
+    .buttRight {
+        float: right;
+    }
+</style>
