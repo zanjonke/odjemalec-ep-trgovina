@@ -23,7 +23,7 @@
                 <mat-form-field class="example-full-width">
                     <input for="cena" id="cena" name="cena" [(ngModel)]="artikel.cena" matInput placeholder="cena" value={{artikel.cena}} >
                 </mat-form-field>
-                <mat-slide-toggle color="primary" [checked]="checked" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
+                <mat-slide-toggle color="primary" [checked]="this.artikel.aktiviran == 1" (change)="putActivity($event)">{{stanje}}</mat-slide-toggle>
             </form>
         </div>
     </mat-card-content>

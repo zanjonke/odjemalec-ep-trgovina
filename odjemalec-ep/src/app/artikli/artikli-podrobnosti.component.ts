@@ -35,7 +35,8 @@ export class ArtikliPodrobnostiComponent implements OnInit {
     }
 
     zbrisi(): void {
-        console.log("TODO")
+        this.artikelService.delete(this.artikel.idartikel);
+        this.router.navigate(['/artikli']);
     }
 
     jeProdajalec(): boolean {

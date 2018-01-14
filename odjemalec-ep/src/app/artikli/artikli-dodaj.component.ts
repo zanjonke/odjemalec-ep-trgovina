@@ -18,18 +18,36 @@ export class ArtikliDodajComponent implements OnInit {
     constructor(private route: ActivatedRoute,
         private location: Location,
         private router: Router,
-        private prodajalecService: ArtikelService) {
+        private artikelService: ArtikelService) {
     }
 
     ngOnInit(): void {
-
+        this.artikel = new Artikel();
+        this.artikel.naziv = '';
+        this.artikel.opis = '';
+        this.artikel.cena = 0;
+        this.artikel.aktiviran = 0;
     }
 
     nazaj(): void {
         this.location.back();
     }
 
+    putActivity(tr: Event) {
+        if (this.artikel.aktiviran == 0) {
+            this.artikel.aktiviran = 1;
+        } else {
+            this.artikel.aktiviran = 0;
+        }
+        console.log(this.artikel.aktiviran)
+    }
+
     posodobi(): void {
-        
+        if (this.artikel.naziv != '' &&
+            this.artikel.cena != null) {
+            this.artikelService.create(this.artikel).then(resp => {
+                this.router.navigate(['/artikli']);
+            })
+        } 
     }
 }

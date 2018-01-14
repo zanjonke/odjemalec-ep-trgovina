@@ -15,15 +15,15 @@
         <div *ngIf="artikel">
             <form class="example-form">
                 <mat-form-field class="example-full-width">
-                    <input  for="" id="naziv" name="naziv"[(ngModel)]="artikel.naziv" matInput placeholder="naziv" value={{artikel.naziv}} >
+                    <input  for="" id="naziv" name="naziv"[(ngModel)]="artikel.naziv" matInput placeholder="naziv" value={{artikel.naziv}} required>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <textarea  for="opis" id="opis" name="opis"[(ngModel)]="artikel.opis" matInput placeholder="opis" value={{artikel.opis}} ></textarea>
+                    <textarea  for="opis" id="opis" name="opis"[(ngModel)]="artikel.opis" matInput placeholder="opis" value={{artikel.opis}}></textarea>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input for="cena" id="cena" name="cena" [(ngModel)]="artikel.cena" matInput placeholder="cena" value={{artikel.cena}} >
+                    <input for="cena" id="cena" name="cena" [(ngModel)]="artikel.cena" matInput placeholder="cena" value={{artikel.cena}} required>
                 </mat-form-field>
-                <mat-slide-toggle color="primary" [checked]="checked" (click)="zamenjaj()">{{stanje}}</mat-slide-toggle>
+                <mat-slide-toggle color="primary" [checked]="this.artikel.aktiviran == 1" (change)="putActivity($event)">{{stanje}}</mat-slide-toggle>
             </form>
         </div>
     </mat-card-content>

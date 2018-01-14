@@ -35,11 +35,6 @@ export class ProdajalecDodajComponent implements OnInit {
     }
 
     neki(): void {
-        console.log(this.prodajalec.geslo);
-        console.log(this.prodajalec.ime);
-        console.log(this.prodajalec.priimek);
-        console.log(this.prodajalec.email);
-        console.log(this.prodajalec.aktiviran);
         this.prodajalecService.create(this.prodajalec).then(resp => {
             this.router.navigate(['/admin/prodajalci']);
         })
