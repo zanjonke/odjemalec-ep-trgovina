@@ -31,14 +31,19 @@ import {LoginService} from "./login/services/login.service";
 import {ProfilComponent} from "./profil/profil-component";
 import {ProfilPosodobiComponent} from "./profil/profil-posodobi.component";
 import {MatProgressSpinnerModule} from "@angular/material";
+
 import {ProdajalciComponent} from "./prodajalci/prodajalci-component";
 import {ProdajalecService} from "./prodajalci/services/prodajalec.service";
 import {ProdajalecPodrobnostiComponent} from "./prodajalci/prodajalci-podrobnosti.component";
 import {ProdajalecPosodobiComponent} from "./prodajalci/prodajalci-posodobi.component";
 import {ProdajalecDodajComponent} from "./prodajalci/prodajalci-dodaj.component";
+
 import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 import {RegisterComponent} from "./register/register-component";
+
+import {NarocilaComponent} from "./narocila/narocila-component";
+import {NarociloService} from "./narocila/services/narocilo.service"; 
 
 @NgModule({
     imports: [
@@ -62,9 +67,10 @@ import {RegisterComponent} from "./register/register-component";
         HeaderComponent,
         ProfilComponent, ProfilPosodobiComponent,
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
-        RegisterComponent
+        RegisterComponent,
+        NarocilaComponent
     ],
-    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService, KosaricaService],
+    providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService, KosaricaService, NarociloService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -51,6 +51,10 @@ export class HeaderComponent {
         this.router.navigate(['/stranka/kosarica']);
     }
 
+    goToNarocila(): void {
+        this.router.navigate(['/stranka/narocila']);
+    }
+
     jeAdmin(): boolean {
         if (localStorage.getItem("jeAdmin") === "true") {
             return true;

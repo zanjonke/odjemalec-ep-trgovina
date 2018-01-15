@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {Artikel} from './models/artikel';
+import {Narocilo} from '../narocila/models/narocilo';
 import {ArtikelService} from './services/artikel.service';
 import {KosaricaService} from './services/kosarica.service';
+import {NarociloService} from '../narocila/services/narocilo.service';
 import { Kosarica } from './models/kosarica';
 
 @Component({
@@ -15,9 +17,11 @@ export class KosaricaComponent implements OnInit {
     artikli: Artikel[];
     kosarica: Kosarica[];
     strankaId: number;
+    narocilo: Narocilo;
 
     constructor(private artikliService: ArtikelService,
                 private kosaricaService: KosaricaService,
+                private narociloService: NarociloService,
                 private router: Router) {
     }
 
@@ -55,7 +59,21 @@ export class KosaricaComponent implements OnInit {
     }
 
     oddaj(): void {
-        console.log("TODO")
+        let txt;
+        let str = JSON.parse(localStorage.getItem('me'));
+        let add = str.naslov
+        if (confirm("Oddano bo naročilo na naslov " + str.naslov + " v vrednosti " + this.skupnaCena + " EUR") == true) {
+            this.narocilo = new Narocilo;
+            this.narocilo.cena = this.skupnaCena
+            this.narocilo.stranka_idstranka = str.idstranka
+            this.narocilo.potrjeno = 0
+            this.narocilo.preklicano = 0
+            this.narociloService.insert(this.narocilo)
+            this.kosaricaService.delete(str.idstranka)
+            this.router.navigate(['/artikli']);
+        } else {
+            console.log("TODO")
+        }
     }
 
     get skupnaCena() {
@@ -70,4 +88,5 @@ export class KosaricaComponent implements OnInit {
         }
 
     }
+      
 }

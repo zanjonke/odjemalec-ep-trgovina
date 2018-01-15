@@ -1,0 +1,55 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<mat-card>
+    <mat-card-title>
+        Narocila      
+    </mat-card-title>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.idnarocilo}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="naslov">
+                <mat-header-cell *matHeaderCellDef> Naslov </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{getNaslov()}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="cena">
+                <mat-header-cell *matHeaderCellDef> Cena </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cena}} EUR</mat-cell>
+            </ng-container>
+
+            
+            <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef> Potrjeno </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> 
+                            <span style="color:red" *ngIf="element.preklicano == 1">Preklicano</span>
+                            <span style="color:green" *ngIf="element.potrjeno == 1">Potrjeno</span>
+                            <span *ngIf="element.preklicano == 0 && element.potrjeno == 0">V čakanju</span>
+                    </mat-cell>
+            </ng-container>
+            
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+</mat-card>
+
+<style>
+    .example-container {
+        display: flex;
+        flex-direction: column;
+        max-height: 500px;
+        max-width: 60%;
+    }
+
+    .mat-table {
+        overflow: auto;
+        max-height: 500px;
+        min-width: 300px;
+    }
+</style>

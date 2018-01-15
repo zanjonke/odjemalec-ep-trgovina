@@ -18,6 +18,7 @@ import {StrankaPosodobiComponent} from "./stranke/stranka-posodobi.component";
 import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 import {RegisterComponent} from "./register/register-component";
 import {KosaricaComponent} from "./artikli/kosarica-component";
+import {NarocilaComponent} from "./narocila/narocila-component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     // stranka specific views
     {path: 'stranka/kosarica', component: KosaricaComponent},
+    {path: 'stranka/narocila', component: NarocilaComponent},
     // prodajalec specific views
     {path: 'prodajalec/stranke', component: StrankeComponent},
     {path: 'prodajalec/stranke/podrobnosti', component: StrankaPodrobnostiComponent},

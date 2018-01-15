@@ -47,19 +47,16 @@ export class KosaricaService {
             .then(response => console.log(response))
             .catch(this.handleError);
     }
-    /*
-    delete(idart: number, idstran:number): Promise<void> {
-        let deletedata = {
-            idartikel: idart
-        }
+    
+    delete(idstran:number): Promise<void> {
         const url = `${this.url}/${idstran}`;
         return this.http
-            .delete(url, JSON.stringify(deletedata), {headers: this.headers})
+            .delete(url, {headers: this.headers})
             .toPromise()
             .then(response => console.log(response))
             .catch(this.handleError);
     }
-    */
+    
     private handleError(error: any): Promise<any> {
         console.error('Prišlo je do napake', error);
         return Promise.reject(error.message || error);
