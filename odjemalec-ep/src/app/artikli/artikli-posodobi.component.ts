@@ -45,4 +45,12 @@ export class ArtikliPosodobiComponent implements OnInit {
         this.artikelService.update(this.artikel)
         this.location.back();
     }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

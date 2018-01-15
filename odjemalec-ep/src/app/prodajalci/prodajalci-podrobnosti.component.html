@@ -1,4 +1,4 @@
-<mat-card *ngIf="prodajalec">
+<mat-card *ngIf="prodajalec && jeAdmin()">
 
     <mat-card-title>
         Podrobnosti prodajalca {{prodajalec.ime}} {{prodajalec.priimek}}

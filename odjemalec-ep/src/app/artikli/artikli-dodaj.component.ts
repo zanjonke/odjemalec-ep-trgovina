@@ -50,4 +50,12 @@ export class ArtikliDodajComponent implements OnInit {
             })
         } 
     }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

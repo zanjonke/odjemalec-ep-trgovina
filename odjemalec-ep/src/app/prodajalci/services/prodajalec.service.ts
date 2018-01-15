@@ -47,7 +47,6 @@ export class ProdajalecService {
     }
 
     update(prodajalec: Prodajalec): Promise<void> {
-        console.log(prodajalec.geslo)
         const url = this.url + '/' + prodajalec.idprodajalec;
         return this.http
             .put(url, JSON.stringify(prodajalec), {headers: this.headers, responseType: 'text'})

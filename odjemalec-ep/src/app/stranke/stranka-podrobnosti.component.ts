@@ -37,4 +37,12 @@ export class StrankaPodrobnostiComponent implements OnInit {
         localStorage.removeItem('stranka');
         this.router.navigate(['/prodajalec/stranke']);
     }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

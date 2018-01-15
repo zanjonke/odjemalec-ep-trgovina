@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<mat-card>
+<mat-card *ngIf="jeProdajalec()">
     <mat-card-title>
         Naročila v čakanju 
     </mat-card-title>
@@ -46,7 +46,7 @@
 
 </mat-card>
 
-<mat-card>
+<mat-card *ngIf="jeProdajalec()">
     <mat-card-title>
         Obdelana naročila     
     </mat-card-title>

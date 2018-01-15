@@ -62,4 +62,12 @@ export class ProdajalecPosodobiComponent implements OnInit {
         }
     }
 
+    jeAdmin(): boolean {
+        if (localStorage.getItem("jeAdmin") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

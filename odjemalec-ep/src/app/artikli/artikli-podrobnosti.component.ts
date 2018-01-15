@@ -87,6 +87,11 @@ export class ArtikliPodrobnostiComponent implements OnInit {
             }
         })
         if (!put){
+            let newKos: Kosarica = new Kosarica;
+            newKos.idartikel_kosarica = this.artikel.idartikel
+            newKos.idstranka_kosarica = this.idStr
+            newKos.kolicina = 1
+            this.kosarica.push(newKos)
             this.kosaricaService.create(this.artikel.idartikel, this.idStr, 1)
         }
         this.jeDodano = true

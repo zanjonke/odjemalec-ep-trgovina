@@ -65,4 +65,12 @@ export class StrankeComponent implements OnInit {
     dodaj(): void {
         this.router.navigate(['/prodajalec/stranke/dodaj']);
     }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -63,4 +63,12 @@ export class NarocilaProdajalecComponent implements OnInit {
         this.getNarocila()
 
     }
+
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

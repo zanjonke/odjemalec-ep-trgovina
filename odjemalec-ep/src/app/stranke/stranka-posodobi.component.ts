@@ -57,4 +57,12 @@ export class StrankaPosodobiComponent implements OnInit {
         }
     }
 
+    jeProdajalec(): boolean {
+        if (localStorage.getItem("jeProdajalec") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-<mat-card *ngIf="stranka">
+<mat-card *ngIf="stranka && jeProdajalec()">
 
     <mat-card-title>
         Podrobnosti stranke {{stranka.ime}} {{stranka.priimek}}

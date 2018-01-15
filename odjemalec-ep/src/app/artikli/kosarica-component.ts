@@ -88,5 +88,13 @@ export class KosaricaComponent implements OnInit {
         }
 
     }
+
+    jeStranka(): boolean {
+        if (localStorage.getItem("jeStranka") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
       
 }

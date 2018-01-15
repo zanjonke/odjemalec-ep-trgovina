@@ -9,7 +9,7 @@
         width: 100%;
     }
 </style>
-<mat-card>
+<mat-card *ngIf="jeAdmin()">
     <mat-card-title>Dodaj novega prodajalca</mat-card-title>
     <mat-card-content>
         <div *ngIf="prodajalec">

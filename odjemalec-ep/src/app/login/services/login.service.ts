@@ -19,7 +19,6 @@ export class LoginService {
             "email": email,
             "geslo": geslo
         }
-        console.log(postdata)
         return this.http
             .post(this.url, JSON.stringify(postdata), {headers: this.headers})
             .toPromise()

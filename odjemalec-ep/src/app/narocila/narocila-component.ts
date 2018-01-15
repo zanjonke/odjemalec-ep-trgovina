@@ -37,4 +37,12 @@ export class NarocilaComponent implements OnInit {
         let str = JSON.parse(localStorage.getItem('me'));
         return str.naslov
     }
+
+    jeStranka(): boolean {
+        if (localStorage.getItem("jeStranka") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

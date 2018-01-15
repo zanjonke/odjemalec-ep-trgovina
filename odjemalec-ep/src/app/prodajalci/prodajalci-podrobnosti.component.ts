@@ -36,4 +36,12 @@ export class ProdajalecPodrobnostiComponent implements OnInit {
         this.router.navigate(['/admin/prodajalci']);
 
     }
+
+    jeAdmin(): boolean {
+        if (localStorage.getItem("jeAdmin") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
