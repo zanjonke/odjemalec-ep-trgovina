@@ -44,6 +44,7 @@ import {RegisterComponent} from "./register/register-component";
 
 import {NarocilaComponent} from "./narocila/narocila-component";
 import {NarociloService} from "./narocila/services/narocilo.service"; 
+import {NarocilaProdajalecComponent} from "./narocila/narocila-prodajalec.component";
 
 @NgModule({
     imports: [
@@ -68,7 +69,7 @@ import {NarociloService} from "./narocila/services/narocilo.service";
         ProfilComponent, ProfilPosodobiComponent,
         ProdajalciComponent, ProdajalecPodrobnostiComponent, ProdajalecPosodobiComponent, ProdajalecDodajComponent,
         RegisterComponent,
-        NarocilaComponent
+        NarocilaComponent, NarocilaProdajalecComponent
     ],
     providers: [StrankaService, ArtikelService, LoginService, ProdajalecService, OceneService, KosaricaService, NarociloService],
     bootstrap: [AppComponent]

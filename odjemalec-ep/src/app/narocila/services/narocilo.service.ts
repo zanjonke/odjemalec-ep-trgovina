@@ -40,6 +40,7 @@ export class NarociloService {
 
     update(nar: Narocilo): Promise<void> {
         const url = `${this.url}/${nar.idnarocilo}`;
+        console.log(url)
         return this.http
             .put(url, JSON.stringify(nar), {headers: this.headers})
             .toPromise()

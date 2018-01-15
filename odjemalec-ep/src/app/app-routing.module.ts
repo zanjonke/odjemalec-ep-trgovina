@@ -19,6 +19,7 @@ import {StrankaDodajComponent} from "./stranke/stranke-dodaj.component";
 import {RegisterComponent} from "./register/register-component";
 import {KosaricaComponent} from "./artikli/kosarica-component";
 import {NarocilaComponent} from "./narocila/narocila-component";
+import {NarocilaProdajalecComponent} from "./narocila/narocila-prodajalec.component";
 
 const routes: Routes = [
     {path: '', redirectTo: '/artikli', pathMatch: 'full'},
@@ -38,6 +39,7 @@ const routes: Routes = [
     {path: 'prodajalec/artikli/dodaj', component: ArtikliDodajComponent},
     {path: 'profil', component: ProfilComponent},
     {path: 'profil/posodobi', component: ProfilPosodobiComponent},
+    {path: 'prodajalec/narocila', component: NarocilaProdajalecComponent},
     //admin specific views
     {path: 'admin/prodajalci', component: ProdajalciComponent},
     {path: 'admin/prodajalci/podrobnosti', component: ProdajalecPodrobnostiComponent},
